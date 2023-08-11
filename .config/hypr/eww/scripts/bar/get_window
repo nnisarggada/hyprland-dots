@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+max_length=60
+
+wintitle=$(hyprctl activewindow | grep "title:")
+wintitle=${wintitle:$((${#wintitle} - $((${#wintitle} - 8)))):${max_length}}
+wintitle=$(echo $wintitle | head --lines=1)
+
+if [[ $wintitle == "Invali" ]]; then
+  echo ""
+else
+  echo "${wintitle}"
+fi

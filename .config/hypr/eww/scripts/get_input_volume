@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+is_muted=$(./scripts/is_output_muted)
+
+if [[ $is_muted == "yes" ]]; then
+  echo 0
+else
+  if command -v wpctl > /dev/null 2>&1; then
+    wpctl get-volume @DEFAULT_SOURCE@ | sed 's/Volume: //g' | tr '.' ':' | sed 's/://g' | sed 's/ \[MUTED]//g' | awk '$0*=1'
+  else
+    pactl get-source-volume @DEFAULT_SOURCE@ | cut -f2 -d / | sed 's/  //g' | xargs echo | cut -f1 -d " " | sed 's/%//g'
+  fi
+fi

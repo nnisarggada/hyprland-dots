@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+alacritty -e ~/.config/hypr/manage/update.sh

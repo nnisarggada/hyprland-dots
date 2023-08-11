@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+workspaces=$(hyprctl workspaces | grep "workspace ID" | cut -f3 -d " " | tr '\n' ':')
+workspaces=${workspaces:0:$((${#workspaces} - 1))}
+workspaces=$(echo "$workspaces" | sed 's/:/, /g')
+
+echo "[$workspaces]"
