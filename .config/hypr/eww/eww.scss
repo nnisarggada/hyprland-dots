@@ -34,9 +34,9 @@
 }
 
 .workspace-button {
-  background-color: #689d6a;
+  background-color: #cd6dfc;
   border: none;
-  border-bottom: 8px solid #518554;
+  border-bottom: 8px solid #b04fe0;
   border-radius: 5px;
   margin-left: 4px;
   margin-bottom: -6px;
@@ -58,7 +58,7 @@
 .bar {
   background-color: #1f2223;
   border-bottom: 8px solid #191c1d;
-  color: #ebdbb2;
+  color: #efefef;
   border-radius: 0px;
 }
 
@@ -66,15 +66,15 @@
   background-color: #1f2223;
   border: none;
   border-bottom: 8px solid #191c1d;
-  color: #ebdbb2;
+  color: #efefef;
   padding: 20px;
   border-radius: 0px 0px 0px 10px;
 }
 
 .bar-menu-button {
-  background-color: #689d6a;
+  background-color: #cd6dfc;
   border: none;
-  border-bottom: 8px solid #518554;
+  border-bottom: 8px solid #b04fe0;
   border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
@@ -101,7 +101,7 @@
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #689d6a;
+  background-color: #cd6dfc;
   color: #000000;
   border-radius: 50px;
 }
@@ -119,7 +119,7 @@
 }
 
 label {
-  color: #ebdbb2;
+  color: #efefef;
   font-family: bold;
 }
 
@@ -133,14 +133,14 @@ label {
 
 .metric-label-text label {
   font-size: 28px;
-  color: #8ec07c;
+  color: #cd6dfc;
 }
 
 .powermenu-window {
   background-color: #1f2223;
   border: none;
   border-bottom: 8px solid #191c1d;
-  color: #ebdbb2;
+  color: #efefef;
   padding: 20px;
   border-radius: 10px;
 }
@@ -151,7 +151,7 @@ label {
     monospace;
   font-weight: bold;
   font-size: 22px;
-  color: #ebdbb2;
+  color: #efefef;
   background-color: #303030;
   border: none;
   border-bottom: 8px solid #272727;
