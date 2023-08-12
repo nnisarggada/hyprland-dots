@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 1
+  opacity: 0.85
 
 scrolling:
   history: 10000
@@ -31,7 +31,7 @@ live_config_reload: true
 
 colors:
   primary:
-    background: "#1c1c1c"
+    background: "#000000"
     foreground: "#efefef"
 
 import:
