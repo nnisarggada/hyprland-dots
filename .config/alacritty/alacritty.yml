@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.85
+  opacity: 1
 
 scrolling:
   history: 10000
@@ -31,26 +31,8 @@ live_config_reload: true
 
 colors:
   primary:
-    background: "#000000"
-    foreground: "#cd6dfc"
-  cursor:
-    text: "#cd6dfc"
-    cursor: "#cd6dfc"
-  normal:
-    black: "#1c1c1c"
-    red: "#f93e60"
-    green: "#4ef93e"
-    yellow: "#f3f93e"
-    blue: "#3e83f9"
-    magenta: "#d73ef9"
-    cyan: "#3ecbf9"
-    white: "#efefef"
-  bright:
-    black: "#1c1c1c"
-    red: "#f93e60"
-    green: "#4ef93e"
-    yellow: "#f3f93e"
-    blue: "#3e83f9"
-    magenta: "#d73ef9"
-    cyan: "#3ecbf9"
-    white: "#efefef"
+    background: "#1c1c1c"
+    foreground: "#efefef"
+
+import:
+  - dracula.yml
