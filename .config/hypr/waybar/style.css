@@ -12,7 +12,7 @@
 
 window#waybar {
   background-color: #1f2223;
-  border-bottom: 8px solid #191c1d;
+  border-bottom: 8px solid #1f2223;
   color: #ebdbb2;
   transition-property: background-color;
   transition-duration: 0.5s;
