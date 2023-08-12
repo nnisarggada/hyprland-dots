@@ -1,0 +1,19 @@
+font=JetBrainsMono Nerd Font 14
+background-color=#1d2021
+text-color=#ebdbb2
+width=350
+height=250
+border-size=4
+border-color=#689d6a
+border-radius=10
+padding=20
+icons=1
+actions=1
+history=1
+layer=overlay
+text-alignment=center
+
+[urgency=high]
+border-color=#cc241d
+text-color=#fb4934
+default-timeout=0
