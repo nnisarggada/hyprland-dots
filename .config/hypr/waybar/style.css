@@ -13,6 +13,7 @@
 window#waybar {
   background-color: #1f2223;
   border-bottom: 8px solid #1f2223;
+  padding: 20px;
   color: #ebdbb2;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -114,7 +115,6 @@ button.active {
 }
 
 #window {
-  background-color: #282828;
   color: #efefef;
   font-family:
     JetBrainsMono Nerd Font,
@@ -122,9 +122,6 @@ button.active {
   font-size: 15px;
   font-weight: bold;
   border: none;
-  border-bottom: 8px solid #272727;
-  border-radius: 5px;
-  margin-bottom: 2px;
   padding-left: 10px;
   padding-right: 10px;
 }
