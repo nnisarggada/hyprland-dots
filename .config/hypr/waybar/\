@@ -48,7 +48,7 @@ button {
   border: none;
   border-bottom: 8px solid #b04fe0;
   border-radius: 5px;
-  margin: 5px 2px;
+  margin: 3px 3px;
   font-family:
     JetBrainsMono Nerd Font,
     sans-sherif;
@@ -105,7 +105,7 @@ button.active {
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-  margin-left: 5px;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
@@ -168,8 +168,8 @@ button.active {
   border: none;
   border-bottom: 8px solid #cc241d;
   border-radius: 5px;
-  margin: 2px 0;
-  margin-right: 7px;
+  margin-bottom: 2px;
+  margin-right: 4px;
   padding-left: 14px;
   padding-right: 7px;
 }
