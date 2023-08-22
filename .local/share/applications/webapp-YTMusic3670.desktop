@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=YT Music
+Comment=Web App |ytmusic
+Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON="youtube-music" firefox --class WebApp-YTMusic3670 --profile /home/nnisarggada/.local/share/ice/firefox/YTMusic3670 --no-remote "http://music.youtube.com"'
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=youtube-music
+Categories=GTK;AudioVideo;
+MimeType=text/html;text/xml;application/xhtml_xml;
+StartupWMClass=WebApp-YTMusic3670
+StartupNotify=true
+X-WebApp-Browser=Firefox
+X-WebApp-URL=http://music.youtube.com
+X-WebApp-CustomParameters=
+X-WebApp-Navbar=false
+X-WebApp-PrivateWindow=false
+X-WebApp-Isolated=true
