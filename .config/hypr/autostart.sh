@@ -9,8 +9,7 @@ source ~/.config/hypr/lib.sh
 run_hook pre &
 
 swww init
-
-~/.local/bin/changewall
+swww img ~/.config/hypr/flat-wall.jpg -t grow --transition-pos top
 
 ~/.config/hypr/waybar/start
 ~/.config/hypr/swaync/start
