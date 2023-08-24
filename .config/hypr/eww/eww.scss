@@ -2,7 +2,6 @@
   all: unset;
   font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-size: 20px;
-  border-radius: 5px;
 }
 
 .spacer-v {
@@ -14,10 +13,7 @@
 }
 
 .window-module {
-  background-color: #282828;
-  border: none;
-  border-bottom: 8px solid #252c32;
-  border-radius: 5px;
+  background-color: #000000;
   margin-bottom: -6px;
   margin-left: 12px;
   padding-left: 10px;
@@ -25,19 +21,14 @@
 }
 
 .window-module label {
-  color: #efefef;
-  font-family:
-    JetBrainsMono Nerd Font,
-    monospace;
+  color: #cad5ff;
+  font-family: JetBrainsMono Nerd Font;
   font-size: 15px;
   font-weight: bold;
 }
 
 .workspace-button {
-  background-color: #cd6dfc;
-  border: none;
-  border-bottom: 8px solid #b04fe0;
-  border-radius: 5px;
+  background-color: #cad5ff;
   margin-left: 4px;
   margin-bottom: -6px;
   padding-left: 14px;
@@ -47,35 +38,25 @@
 }
 
 .workspace-button label {
-  color: #282828;
-  font-family:
-    JetBrainsMono Nerd Font,
-    sans-sherif;
+  color: #131313;
+  font-family: JetBrainsMono Nerd Font;
   font-weight: bold;
   font-size: 14px;
 }
 
 .bar {
-  background-color: #1f2223;
-  border-bottom: 8px solid #191c1d;
-  color: #efefef;
-  border-radius: 0px;
+  background-color: #131313;
+  color: #cad5ff;
 }
 
 .bar-menu {
-  background-color: #1f2223;
-  border: none;
-  border-bottom: 8px solid #191c1d;
-  color: #efefef;
+  background-color: #131313;
+  color: #cad5ff;
   padding: 20px;
-  border-radius: 0px 0px 0px 10px;
 }
 
 .bar-menu-button {
-  background-color: #cd6dfc;
-  border: none;
-  border-bottom: 8px solid #b04fe0;
-  border-radius: 5px;
+  background-color: #cad5ff;
   text-shadow: none;
   box-shadow: none;
   padding-left: 10px;
@@ -101,7 +82,7 @@
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #cd6dfc;
+  background-color: #cad5ff;
   color: #000000;
   border-radius: 50px;
 }
@@ -133,28 +114,21 @@ label {
 
 .metric-label-text label {
   font-size: 28px;
-  color: #cd6dfc;
+  color: #cad5ff;
 }
 
 .powermenu-window {
-  background-color: #1f2223;
-  border: none;
-  border-bottom: 8px solid #191c1d;
-  color: #efefef;
+  background-color: #131313;
+  color: #cad5ff;
   padding: 20px;
-  border-radius: 10px;
 }
 
 .powermenu-window label {
-  font-family:
-    JetBrainsMono Nerd Font,
-    monospace;
+  font-family: JetBrainsMono Nerd Font;
   font-weight: bold;
   font-size: 22px;
-  color: #efefef;
-  background-color: #303030;
-  border: none;
-  border-bottom: 8px solid #272727;
+  color: #cad5ff;
+  background-color: #191919;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 4px;
@@ -162,10 +136,8 @@ label {
 }
 
 .powermenu-button {
-  background-color: #e23c2c;
+  background-color: #f75265;
   border: none;
-  border-bottom: 8px solid #cc241d;
-  border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
   padding-left: 10px;
@@ -177,12 +149,12 @@ label {
 }
 
 .powermenu-button label {
-  color: #282828;
+  color: #000000;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;
   font-size: 25px;
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-family: JetBrainsMono Nerd Font;
   background: none;
   border: none;
   padding: 0px;
