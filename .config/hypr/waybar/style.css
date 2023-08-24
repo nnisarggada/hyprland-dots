@@ -276,7 +276,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #cad5ff;
+  background-color: rgba(202, 213, 255, 0.5);
   color: #000000;
   font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
