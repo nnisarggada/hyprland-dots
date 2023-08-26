@@ -8,7 +8,7 @@
     "spacing": 4,
 
     "modules-left": ["wlr/workspaces", "hyprland/window"],
-    "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync", "custom/menu", "custom/powermenu"],
+    "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
 
     "custom/powermenu": {
@@ -17,7 +17,7 @@
 	"tooltip": false
     },
     "custom/swaync": {
-	"format": " ",
+	"format": " ",
 	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
 	"tooltip": false
     },

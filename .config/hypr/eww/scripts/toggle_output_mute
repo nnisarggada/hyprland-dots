@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if command -v wpctl > /dev/null 2>&1; then
-  wpctl set-mute @DEFAULT_SINK@ toggle
-else
-  pactl set-sink-mute @DEFAULT_SINK@ toggle
-fi

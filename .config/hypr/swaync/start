@@ -2,4 +2,4 @@
 
 killall swaync
 pkill swaync
-swaync -c ~/.config/hypr/swaync/config -s ~/.config/hypr/swaync/style.css &
+swaync -c ~/.config/hypr/swaync/config.json -s ~/.config/hypr/swaync/style.css &

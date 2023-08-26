@@ -28,8 +28,7 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": false,
-  "scripts": {
-  },
+  "scripts": {},
   "notification-visibility": {
     "example-name": {
       "state": "muted",
@@ -38,10 +37,14 @@
     }
   },
   "widgets": [
+    "mpris",
+    "backlight",
+    "volume",
     "inhibitors",
     "title",
     "dnd",
-    "notifications"
+    "notifications",
+    "buttons-grid"
   ],
   "widget-config": {
     "inhibitors": {
@@ -64,6 +67,34 @@
     "mpris": {
       "image-size": 96,
       "image-radius": 12
+    },
+    "backlight": {
+      "label": "󰃟",
+      "device": "intel_backlight",
+      "min": 10
+    },
+    "volume": {
+      "label": "󰕾"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "",
+          "command": "gtklock"
+        },
+        {
+          "label": "󰍃",
+          "command": "hyprctl dispatch exit"
+        },
+        {
+          "label": "",
+          "command": "reboot"
+        },
+        {
+          "label": "⏻",
+          "command": "shutdown now"
+        }
+      ]
     }
   }
 }
