@@ -20,6 +20,8 @@ blueman-applet &
 
 lxsession &
 
+udiskie &
+
 copyq &
 
 brightnessctl --restore
