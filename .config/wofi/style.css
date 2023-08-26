@@ -16,6 +16,7 @@ window {
 
 #entry:selected {
   background-color: #cad5ff;
+  border-radius: 0;
 }
 
 #text:selected {
@@ -26,6 +27,7 @@ window {
   background-color: rgba(13, 13, 13, 0.8);
   color: #cad5ff;
   padding: 1rem;
+  border-radius: 0;
 }
 
 image {
