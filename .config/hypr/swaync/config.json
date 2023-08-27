@@ -69,12 +69,12 @@
       "image-radius": 12
     },
     "backlight": {
-      "label": "󰃟",
+      "label": "󰃟 ",
       "device": "intel_backlight",
       "min": 10
     },
     "volume": {
-      "label": "󰕾"
+      "label": "󰕾 "
     },
     "buttons-grid": {
       "actions": [

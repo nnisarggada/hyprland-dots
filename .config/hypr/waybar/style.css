@@ -50,6 +50,7 @@ button {
   font-size: 32px;
   padding: 10px 15px;
   transition: transform 0.1s ease-in-out;
+  border-radius: 5px;
 }
 
 button:hover,
@@ -118,6 +119,7 @@ button.active {
   margin: 5px 0;
   padding-left: 13px;
   padding-right: 9px;
+  border-radius: 5px;
 }
 
 #custom-menu {
@@ -129,6 +131,7 @@ button.active {
   margin: 5px 0;
   padding-left: 14px;
   padding-right: 8px;
+  border-radius: 5px;
 }
 
 #custom-powermenu {
@@ -141,6 +144,7 @@ button.active {
   margin-right: 7px;
   padding-left: 14px;
   padding-right: 7px;
+  border-radius: 5px;
 }
 
 #clock {
@@ -150,6 +154,7 @@ button.active {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 #battery {
@@ -159,6 +164,7 @@ button.active {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 @keyframes blink {
@@ -175,6 +181,7 @@ button.active {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 label:focus {
@@ -242,6 +249,7 @@ label:focus {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 #wireplumber {
@@ -282,6 +290,7 @@ label:focus {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
+  border-radius: 5px;
 }
 
 #tray > .passive {
