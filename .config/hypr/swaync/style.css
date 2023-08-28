@@ -275,7 +275,7 @@
 }
 
 .widget-buttons-grid {
-  padding: 10px;
+  padding: 10px 25px;
   margin: 10px;
   background-color: #1c1c1c;
   border-radius: 10px;
@@ -283,13 +283,22 @@
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
   background: #f75265;
-  border: none;
+  border: 2px solid #000000;
   font-size: 32px;
   border-radius: 5px;
-  min-width: 70px;
+  min-width: 60px;
+  color: #000000;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:focus {
+  background: #f75265;
+  border: 2px solid #cad5ff;
+  font-size: 32px;
+  border-radius: 5px;
+  min-width: 60px;
   color: #000000;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-  background: #f03050;
+  border: 2px solid #cad5ff;
 }
