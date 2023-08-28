@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #0e0e0e;
   color: #cad5ff;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -111,7 +111,7 @@ button.active {
 }
 
 #custom-swaync {
-  background-color: #cad5ff;
+  background-color: #5b9bf8;
   color: #000000;
   font-family: JetBrainsMono Nerd Font;
   font-size: 24px;
@@ -284,7 +284,7 @@ label:focus {
 }
 
 #tray {
-  background-color: rgba(202, 213, 255, 0.5);
+  background-color: #2e3038;
   color: #000000;
   font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
