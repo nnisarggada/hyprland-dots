@@ -14,7 +14,7 @@ programs=("evtest" "less" "wget" "ncdu" "bluez" "bluez-libs" "bluez-utils" "git"
 for program in "${programs[@]}"; do
     if ! yay -Q "$program" >/dev/null 2>&1; then
         echo "Installing $program..."
-        yay -S --noconfirm "$program"
+        yay -S --noconfirm --needed "$program"
         echo "$program installed successfully!"
     else
         echo "$program is already installed."
