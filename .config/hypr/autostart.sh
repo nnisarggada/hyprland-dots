@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-swww init
-swww img ~/Pictures/Wallpapers/what-will-you-say-today.jpg -t grow --transition-pos top
+swww init &
+swww img ~/Pictures/Wallpapers/what-will-you-say-today.jpg -t grow --transition-pos top &
 
-~/.config/hypr/waybar/start
-~/.config/hypr/swaync/start
+~/.config/waybar/start &
+~/.config/swaync/start &
 
 nm-applet &
 blueman-applet &

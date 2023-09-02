@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-killall swaync
-pkill swaync
-swaync -c ~/.config/hypr/swaync/config.json -s ~/.config/hypr/swaync/style.css &
