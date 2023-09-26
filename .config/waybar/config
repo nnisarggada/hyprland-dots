@@ -7,7 +7,7 @@
 
     "spacing": 4,
 
-    "modules-left": ["wlr/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
 
@@ -18,16 +18,13 @@
     },
     "custom/swaync": {
 	"format": " ",
-	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
+	"on-click": "~/.config/swaync/scripts/tray_waybar.sh",
 	"tooltip": false
     },
     "custom/menu": {
 	"format": " ",
 	"on-click": "~/.config/hypr/eww/scripts/waybar/bar_menu",
 	"tooltip": false
-    },
-    "wlr/workspaces": {
-	"on-click": "activate"
     },
     "keyboard-state": {
         "numlock": true,
