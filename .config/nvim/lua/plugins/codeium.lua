@@ -1,0 +1,5 @@
+return {
+  {
+    "Exafunction/codeium.vim",
+  },
+}
