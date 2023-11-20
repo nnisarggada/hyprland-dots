@@ -1,5 +1,0 @@
-{"timestamp":210878,"category":"fog.validation","name":"validate_early_event"}
-{"timestamp":211830,"category":"nimbus_events","name":"enrollment","extra":{"experiment":"csv-import-release-rollout","enrollment_id":"114a946a-6d99-4a5e-a125-4fcf9a513fe0","branch":"enable-csv-import","experiment_type":"rollout"}}
-{"timestamp":211865,"category":"nimbus_events","name":"enrollment","extra":{"experiment_type":"rollout","branch":"control","enrollment_id":"f8f21919-f9ed-4cae-95ac-6381ce49a984","experiment":"serp-ad-telemetry-rollout"}}
-{"timestamp":211876,"category":"nimbus_events","name":"validation_failed","extra":{"experiment":"next-generation-accessibility-engine-powering-screen-readers","feature":"accessibilityCache","reason":"invalid-feature"}}
-{"timestamp":211876,"category":"nimbus_events","name":"validation_failed","extra":{"reason":"invalid-feature","feature":"accessibilityCache","experiment":"next-generation-accessibility-engine-powering-screen-readers-and-other-ats-copy"}}

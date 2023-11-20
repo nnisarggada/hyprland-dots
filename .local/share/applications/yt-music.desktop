@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=YT Music
+Comment=ytmusic
+Exec=firefox --new-window music.youtube.com
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=youtube-music
+Categories=GTK;AudioVideo;
