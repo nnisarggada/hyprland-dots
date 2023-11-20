@@ -3,6 +3,8 @@
 swww init &
 swww img ~/Pictures/Wallpapers/what-will-you-say-today.jpg -t grow --transition-pos top &
 
+avizo-service &
+
 ~/.config/waybar/start &
 ~/.config/swaync/start &
 
