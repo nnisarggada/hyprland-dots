@@ -39,8 +39,9 @@ sudo cp -r .fonts ~/
 sudo cp -r Pictures ~/
 sudo cp -r Music ~/
 sudo cp .zshrc ~/
+sudo cp .gtkrc-2.0 ~/
 
-sudo cp environment /etc/
+sudo cp etc/environment /etc/
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
