@@ -11,11 +11,6 @@
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
 
-    "custom/powermenu": {
-	"format": " ",
-	"on-click": "~/.config/hypr/eww/scripts/waybar/powermenu",
-	"tooltip": false
-    },
     "custom/swaync": {
 	"format": " ",
 	"on-click": "~/.config/swaync/scripts/tray_waybar.sh",

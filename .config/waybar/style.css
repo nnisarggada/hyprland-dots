@@ -1,11 +1,5 @@
 * {
-  font-family:
-    JetBrainsMono Nerd Font,
-    FontAwesome,
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+  font-family: "JetBrainsMono NF";
   font-size: 16px;
   font-weight: bold;
 }
@@ -45,7 +39,6 @@ button {
   background-color: rgba(0, 0, 0, 0);
   color: #cad5ff;
   margin: 5px 2px;
-  font-family: JetBrainsMono Nerd Font;
   font-weight: bold;
   font-size: 32px;
   padding: 10px 15px;
@@ -104,7 +97,6 @@ button.active {
 
 #window {
   color: #cad5ff;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   padding: 0 10px;
@@ -113,7 +105,6 @@ button.active {
 #custom-swaync {
   background-color: #5b9bf8;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 24px;
   font-weight: bold;
   margin: 5px 0;
@@ -125,7 +116,6 @@ button.active {
 #custom-menu {
   background-color: #cad5ff;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 24px;
   font-weight: bold;
   margin: 5px 0;
@@ -137,7 +127,6 @@ button.active {
 #custom-powermenu {
   background-color: #f75265;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 24px;
   font-weight: bold;
   margin: 5px 0;
@@ -150,7 +139,6 @@ button.active {
 #clock {
   background-color: #cad5ff;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
@@ -160,7 +148,6 @@ button.active {
 #battery {
   background-color: #cad5ff;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
@@ -177,7 +164,6 @@ button.active {
 #battery.critical:not(.charging) {
   background-color: #f75265;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
@@ -191,9 +177,6 @@ label:focus {
 #cpu {
   background-color: #689d6a;
   color: #282828;
-  font-family:
-    JetBrainsMono Nerd Font,
-    monospace;
   font-size: 15px;
   font-weight: bold;
   border: none;
@@ -205,9 +188,6 @@ label:focus {
 #memory {
   background-color: #c8779b;
   color: #282828;
-  font-family:
-    JetBrainsMono Nerd Font,
-    monospace;
   font-size: 15px;
   font-weight: bold;
   border: none;
@@ -223,9 +203,6 @@ label:focus {
 #backlight {
   background-color: #98bbad;
   color: #282828;
-  font-family:
-    JetBrainsMono Nerd Font,
-    monospace;
   font-size: 15px;
   font-weight: bold;
   border: none;
@@ -245,7 +222,6 @@ label:focus {
 #pulseaudio {
   background-color: #cad5ff;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
@@ -286,7 +262,6 @@ label:focus {
 #tray {
   background-color: #2e3038;
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
@@ -376,7 +351,6 @@ tooltip decoration:backdrop {
 
 tooltip label {
   color: #000000;
-  font-family: JetBrainsMono Nerd Font;
   font-size: 18px;
   padding-left: 5px;
   padding-right: 5px;
