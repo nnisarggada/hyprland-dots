@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Whatsapp
+Comment=whatsapp
+Exec=firefox --new-window web.whatsapp.com
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=whatsapp
+Categories=GTK;AudioVideo;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Discord
+Comment=discord
+Exec=firefox --new-window https://discord.com/channels/@me
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=discord
+Categories=GTK;AudioVideo;
