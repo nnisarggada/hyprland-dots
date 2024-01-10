@@ -1,9 +1,7 @@
 {
-    "layer": "top", 
+    "layer": "top",
 
-    "height": 30, 
-
-    // "margin": 10,
+    "height": 30,
 
     "spacing": 4,
 
@@ -12,15 +10,11 @@
 
 
     "custom/swaync": {
-	"format": " ",
-	"on-click": "~/.config/swaync/scripts/tray_waybar.sh",
-	"tooltip": false
+        "format": " ",
+        "on-click": "sleep 0.1 && ~/.config/swaync/scripts/tray_waybar.sh",
+        "tooltip": false
     },
-    "custom/menu": {
-	"format": " ",
-	"on-click": "~/.config/hypr/eww/scripts/waybar/bar_menu",
-	"tooltip": false
-    },
+
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -30,9 +24,11 @@
             "unlocked": ""
         }
     },
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
@@ -40,6 +36,7 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
+
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -66,6 +63,7 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
+
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -73,30 +71,37 @@
             "deactivated": ""
         }
     },
+
     "tray": {
         "spacing": 10
     },
+
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d %B %Y | %A}",
-	"format": "{:%I:%M %p}"
+        "format": "{:%I:%M %p}"
     },
+
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
+
     "memory": {
         "format": "{}% "
     },
+
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
     },
+
     "battery": {
         "states": {
             "warning": 30,
@@ -108,9 +113,11 @@
         "format-alt": "{time} {icon}",
         "format-icons": [" ", " ", " ", " ", " "]
     },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
+
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -119,6 +126,7 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
         "scroll-step": 10,
         "format": "{volume}% {icon} {format_source}",
@@ -138,16 +146,4 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-    }
 }
-
