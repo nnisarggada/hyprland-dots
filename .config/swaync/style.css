@@ -127,7 +127,7 @@
 }
 
 .summary {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: bold;
   background: transparent;
   color: #cad5ff;
@@ -184,14 +184,14 @@
 /* Title widget */
 .widget-title {
   margin: 8px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .widget-title > button {
   background: #cad5ff;
   color: #000000;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-shadow: none;
   border: none;
