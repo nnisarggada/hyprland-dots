@@ -8,6 +8,8 @@ mkdir ~/.icons
 mkdir ~/.local
 mkdir ~/.local/bin
 
+
+echo ""
 if ! command -v yay &>/dev/null; then
 	git clone https://aur.archlinux.org/yay-bin
 	cd yay-bin
@@ -18,10 +20,15 @@ else
 	echo "YAY already installed."
 	yay
 fi
+echo ""
 
-programs=("qt5-wayland" "libva" "libva-nvidia-driver-git" "flatpak" "adwaita-dark" "wl-clipboard" "wireplumber" "pamixer" "qt5-wayland" "qt6-wayland" "evtest" "less" "wget" "ncdu" "bluez" "bluez-libs" "bluez-utils" "git" "github-cli" "papirus-icon-theme" "pavucontrol" "blueman" "qt5ct" "qt5-styleplugins" "unzip" "zip" "firefox" "zsh" "alacritty" "thunar" "htop" "neofetch" "brightnessctl" "light" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "zathura-pdf-mupdf" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "sxiv" "webapp-manager" "waybar" "wofi" "wofi-emoji" "wofi-calc" "notification-daemon" "swaync" "avizo" "noto-fonts-emoji" "lxsession" "grimblast-git" "nwg-look-bin" "bibata-cursor-theme" "swaylock-effects" "xdg-desktop-portal-hyprland" "hyprpaper" "network-manager-applet" "copyq" "hyprpicker-git" "xwaylandvideobridge-cursor-mode-2-git" "mission-center" "google-chrome")
+required_programs=("adwaita-dark" "alacritty" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "flatpak" "git" "hyprpaper" "hyprpicker-git" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaylock-effects" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting")
 
-for program in "${programs[@]}"; do
+optional_programs=("github-cli" "google-chrome" "neofetch" "neovim" "mission-center")
+
+echo ""
+echo "Checking and installing required programs..."
+for program in $(echo "${required_programs[@]}" | tr ' ' '\n' | sort); do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
 		echo "Installing $program..."
 		yay -S --noconfirm --needed "$program"
@@ -30,6 +37,25 @@ for program in "${programs[@]}"; do
 		echo "$program is already installed."
 	fi
 done
+echo ""
+
+echo ""
+echo "Checking and installing optional programs..."
+for program in "${optional_programs[@]}"; do
+		if ! yay -Q "$program" >/dev/null 2>&1; then
+      read -p "Do you want to install $program? (Y/n): " install_optional
+      if [[ $install_optional =~ ^[Yy]$ ]]; then
+        echo "Installing $program..."
+        yay -S --noconfirm --needed "$program"
+        echo "$program installed successfully!"
+      else
+        echo "Skipping $program installation."
+      fi
+		else
+			echo "$program is already installed."
+    fi
+done
+echo ""
 
 sudo cp -r .config ~/
 sudo cp -r .themes ~/
