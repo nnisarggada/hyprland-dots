@@ -1,5 +1,101 @@
-# Minimal Black and White Hyprland Rice
+# Minimal Black and White [Hyprland](https://hyprland.org) Rice
 
+## Details
+
+- **OS:** [Arch Linux](https://archlinux.org/)
+- **Shell:** [zsh 5.9](https://www.zsh.org/)
+- **WM:** [Hyprland](https://hyprland.org)
+- **Theme:** [Colloid-Dark](https://github.com/vinceliuice/Colloid-gtk-theme)
+- **Icons:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
+- **Browser:** [Firefox](https://www.mozilla.org/en-US/firefox/)
+- **Bar:** [Waybar](https://github.com/Alexays/Waybar)
+- **Launcher:** [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- **Notifications / Control Center:** [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
+
+## Installation Steps
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/nnisarggada/hyprland-dots
+cd hyprland-dots
+```
+
+### Step 2: Run the Installation Script
+
+```bash
+./install.sh
+```
+
+Follow the prompts during the installation process.
+
+## Dependencies
+
+### Required Programs
+
+- [adwaita-dark](https://github.com/GNOME/adwaita-icon-theme)
+- [alacritty](https://github.com/alacritty/alacritty)
+- [blueman](https://github.com/blueman-project/blueman)
+- [bluez](https://git.kernel.org/pub/scm/bluetooth/bluez.git)
+- [bluez-libs](https://git.kernel.org/pub/scm/bluetooth/bluez-libs.git)
+- [bluez-utils](https://git.kernel.org/pub/scm/bluetooth/bluez-utils.git)
+- [brightnessctl](https://github.com/Hummer12007/brightnessctl)
+- [copyq](https://github.com/hluk/CopyQ)
+- [evtest](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/tools/input/evtest.c)
+- [flatpak](https://github.com/flatpak/flatpak)
+- [git](https://git-scm.com/)
+- [hyprpaper](https://github.com/hyprland/hyprpaper)
+- [hyprpicker-git](https://github.com/hyprland/hyprpicker)
+- [jq](https://github.com/stedolan/jq)
+- [libnotify](https://developer.gnome.org/libnotify)
+- [libva](https://github.com/intel/libva)
+- [libva-nvidia-driver-git](https://aur.archlinux.org/packages/libva-nvidia-driver-git/)
+- [light](https://github.com/haikarainen/light)
+- [lxsession](https://sourceforge.net/projects/lxde/)
+- [mlocate](https://fedorahosted.org/mlocate/)
+- [ncdu](https://dev.yorhel.nl/ncdu)
+- [network-manager-applet](https://github.com/NetworkManager/NetworkManager)
+- [nodejs](https://github.com/nodejs/node)
+- [noto-fonts-emoji](https://github.com/googlefonts/noto-fonts)
+- [ntfs-3g](https://github.com/ntfs-3g/ntfs-3g)
+- [nwg-look-bin](https://github.com/nwg-piotr/nwg-look)
+- [pamixer](https://github.com/cdemoulins/pamixer)
+- [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/)
+- [qt5-wayland](https://wiki.qt.io/QtWayland)
+- [qt5ct](https://github.com/qt/qt5ct)
+- [qt5-styleplugins](https://github.com/qt/qtstyleplugins)
+- [qt6-wayland](https://wiki.qt.io/QtWayland)
+- [swaylock-effects](https://github.com/mortie/swaylock-effects)
+- [swaync](https://github.com/SirCmpwn/swaync)
+- [sxiv](https://github.com/muennich/sxiv)
+- [thunar](https://docs.xfce.org/xfce/thunar/start)
+- [ttf-jetbrains-mono-nerd](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono)
+- [ttf-joypixels](https://www.joypixels.com/)
+- [unzip](https://github.com/nwihp/unzip)
+- [udiskie](https://github.com/coldfix/udiskie)
+- [udisks2](https://github.com/storaged-project/udisks)
+- [waybar](https://github.com/Alexays/Waybar)
+- [wireplumber](https://gitlab.freedesktop.org/pipewire/wireplumber)
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
+- [wofi](https://hg.sr.ht/~scoopta/wofi)
+- [wofi-calc](https://github.com/KamataRyo/wofi-calc)
+- [wofi-emoji](https://github.com/adi1090x/rofi)
+- [xdg-desktop-portal-hyprland](https://github.com/hyprland/xdg-desktop-portal-hyprland)
+- [xwaylandvideobridge-cursor-mode-2-git](https://aur.archlinux.org/packages/xwaylandvideobridge-cursor-mode-2-git/)
+- [zathura](https://github.com/pwmt/zathura)
+- [zathura-pdf-mupdf](https://pwmt.org/projects/zathura-pdf-mupdf/)
+- [zsh](https://www.zsh.org/)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+### Optional Programs
+
+- [github-cli](https://github.com/cli/cli)
+- [google-chrome](https://www.google.com/chrome/)
+- [neofetch](https://github.com/dylanaraps/neofetch)
+- [neovim](https://github.com/neovim/neovim)
+- [mission-center](https://github.com/hyprland/mission-center)
 
 ## Key Bindings
 
@@ -68,7 +164,7 @@
 ## Author
 This Hyprland rice configuration was crafted and customized by [Nnisarg Gada](https://nnisarg.in). Feel free to explore and modify the configuration to suit your preferences.
 
-## Support
+## Make it your own!
 For any furthur customisations, please refer to the [Hyprland Wiki](https://wiki.hyprland.org) and community forums.
 
 Happy customizing!
