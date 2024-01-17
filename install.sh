@@ -19,7 +19,7 @@ else
 	yay
 fi
 
-programs=("qt5-wayland" "libva" "libva-nvidia-driver-git" "flatpak" "adwaita-dark" "wl-clipboard" "wireplumber" "pamixer" "qt5-wayland" "qt6-wayland" "evtest" "less" "wget" "ncdu" "bluez" "bluez-libs" "bluez-utils" "git" "github-cli" "papirus-icon-theme" "pavucontrol" "blueman" "qt5ct" "qt5-styleplugins" "unzip" "zip" "firefox" "zsh" "alacritty" "thunar" "htop" "neofetch" "brightnessctl" "light" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "zathura-pdf-mupdf" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "sxiv" "webapp-manager" "waybar-hyprland-git" "wofi" "wofi-emoji" "wofi-calc" "notification-daemon" "swaync" "avizo" "noto-fonts-emoji" "lxsession" "grimblast-git" "nwg-look-bin" "bibata-cursor-theme" "swaylock-effects" "xdg-desktop-portal-hyprland" "swww" "network-manager-applet" "copyq" "hyprpicker-git" "xwaylandvideobridge-cursor-mode-2-git" "mission-center" "google-chrome")
+programs=("qt5-wayland" "libva" "libva-nvidia-driver-git" "flatpak" "adwaita-dark" "wl-clipboard" "wireplumber" "pamixer" "qt5-wayland" "qt6-wayland" "evtest" "less" "wget" "ncdu" "bluez" "bluez-libs" "bluez-utils" "git" "github-cli" "papirus-icon-theme" "pavucontrol" "blueman" "qt5ct" "qt5-styleplugins" "unzip" "zip" "firefox" "zsh" "alacritty" "thunar" "htop" "neofetch" "brightnessctl" "light" "ntfs-3g" "udisks2" "udiskie" "gvfs" "ttf-ms-fonts" "neovim" "nodejs" "npm" "lua" "python-pillow" "zathura" "ttf-joypixels" "ttf-jetbrains-mono-nerd" "zathura-pdf-mupdf" "python-pip" "mlocate" "zsh-syntax-highlighting" "libnotify" "jq" "sxiv" "webapp-manager" "waybar-hyprland-git" "wofi" "wofi-emoji" "wofi-calc" "notification-daemon" "swaync" "avizo" "noto-fonts-emoji" "lxsession" "grimblast-git" "nwg-look-bin" "bibata-cursor-theme" "swaylock-effects" "xdg-desktop-portal-hyprland" "hyprpaper" "network-manager-applet" "copyq" "hyprpicker-git" "xwaylandvideobridge-cursor-mode-2-git" "mission-center" "google-chrome")
 
 for program in "${programs[@]}"; do
 	if ! yay -Q "$program" >/dev/null 2>&1; then
@@ -40,8 +40,8 @@ sudo cp -r Music ~/
 sudo cp .zshrc ~/
 sudo cp .gtkrc-2.0 ~/
 
-swww init &
-swww img ~/Pictures/Wallpapers/what-will-you-say-today.jpg -t grow --transition-pos top &
+hyprpaper &
+sudo systemctl enable bluetooth
 
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-date true

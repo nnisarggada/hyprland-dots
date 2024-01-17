@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-swww init &
-swww img ~/Pictures/Wallpapers/what-will-you-say-today.jpg -t grow --transition-pos top &
+hyprpaper &
 
 avizo-service &
 
