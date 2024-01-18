@@ -24,7 +24,7 @@ echo ""
 
 required_programs=("adwaita-dark" "alacritty" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "flatpak" "git" "hyprpaper" "hyprpicker-git" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaylock-effects" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting")
 
-optional_programs=("github-cli" "google-chrome" "neofetch" "neovim" "mission-center")
+optional_programs=("github-cli" "google-chrome" "ly" "mission-center" "neofetch" "neovim")
 
 echo ""
 echo "Checking and installing required programs..."
@@ -44,10 +44,14 @@ echo "Checking and installing optional programs..."
 for program in "${optional_programs[@]}"; do
 		if ! yay -Q "$program" >/dev/null 2>&1; then
       read -p "Do you want to install $program? (Y/n): " install_optional
-      if [[ $install_optional =~ ^[Yy]$ ]]; then
+      if [[ ! $install_optional =~ ^[nN]$ ]]; then
         echo "Installing $program..."
         yay -S --noconfirm --needed "$program"
         echo "$program installed successfully!"
+        if [[ $program == "ly" ]]; then
+          sudo systemctl disable display-manager.service
+          sudo systemctl enable ly.service
+        fi
       else
         echo "Skipping $program installation."
       fi
@@ -80,7 +84,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro 1
 gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
-sudo cp etc/environment /etc/
+sudo cp -r etc/* /etc/
 
 sudo chown $USER ~/ -R
 chsh -s /usr/bin/zsh
