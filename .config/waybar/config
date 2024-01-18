@@ -1,13 +1,11 @@
 {
-    "layer": "top",
-
-    "height": 30,
+    "height": 45,
 
     "spacing": 4,
 
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
-
 
     "custom/swaync": {
         "format": " ",
