@@ -2,7 +2,7 @@
 Version=1.0
 Name=Youtube
 Comment=youtube
-Exec=firefox --new-window youtube.com
+Exec=librewolf --new-window youtube.com
 Terminal=false
 X-MultipleArgs=false
 Type=Application

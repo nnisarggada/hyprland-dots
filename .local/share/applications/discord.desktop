@@ -2,7 +2,7 @@
 Version=1.0
 Name=Discord
 Comment=discord
-Exec=firefox --new-window https://discord.com/channels/@me
+Exec=librewolf --new-window https://discord.com/channels/@me
 Terminal=false
 X-MultipleArgs=false
 Type=Application

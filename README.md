@@ -8,7 +8,7 @@
 - **Theme:** [Colloid-Dark](https://github.com/vinceliuice/Colloid-gtk-theme)
 - **Icons:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
-- **Browser:** [Firefox](https://www.mozilla.org/en-US/firefox/)
+- **Browser:** [Librewolf](https://librewolf.net/)
 - **Bar:** [Waybar](https://github.com/Alexays/Waybar)
 - **Launcher:** [Wofi](https://hg.sr.ht/~scoopta/wofi)
 - **Notifications / Control Center:** [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
@@ -49,6 +49,7 @@ Follow the prompts during the installation process.
 - [hyprpicker-git](https://github.com/hyprland/hyprpicker)
 - [jq](https://github.com/stedolan/jq)
 - [libnotify](https://developer.gnome.org/libnotify)
+- [librewolf](https://librewolf.net/)
 - [libva](https://github.com/intel/libva)
 - [libva-nvidia-driver-git](https://aur.archlinux.org/packages/libva-nvidia-driver-git/)
 - [light](https://github.com/haikarainen/light)
@@ -119,7 +120,7 @@ Follow the prompts during the installation process.
 - **Mod + SHIFT + CTRL + X**: Save screenshot of entire screen to ~/Pictures
 - **Mod + SHIFT + O**: Toggle mute audio
 - **Mod + SHIFT + M**: Toggle mute microphone
-- **Mod + B**: Launch Firefox
+- **Mod + B**: Launch Librewolf
 - **Mod + V**: Toggle CopyQ clipboard manager
 - **Mod + SHIFT + MINUS**: Move active window to a special workspace
 - **Mod + MINUS**: Toggle special workspace
