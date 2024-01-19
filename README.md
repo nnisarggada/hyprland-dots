@@ -93,7 +93,6 @@ Follow the prompts during the installation process.
 
 - [github-cli](https://github.com/cli/cli)
 - [google-chrome](https://www.google.com/chrome/)
-- [ly](https://github.com/fairyglade/ly)
 - [mission-center](https://github.com/hyprland/mission-center)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [neovim](https://github.com/neovim/neovim)
