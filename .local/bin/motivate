@@ -1,0 +1,18 @@
+#!/bin/sh
+
+API_URL="https://favqs.com/api/qotd"
+DEFAULT_QUOTE="All you have is the PRESENT!"
+
+while true; do
+    response=$(curl -s "$API_URL" | jq -r '.quote.body')
+
+    if [ $? -eq 0 ]; then
+        if [ ${#response} -le 50 ]; then
+            echo "$response"
+            break
+        fi
+    else
+        echo "$DEFAULT_QUOTE"
+        break
+    fi
+done
