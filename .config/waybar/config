@@ -9,7 +9,7 @@
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
     "custom/motivate": {
-        "format": "~ {}",
+        "format": " ~ {}",
         "exec": "~/.local/bin/motivate",
         "interval": 10
     },
