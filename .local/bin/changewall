@@ -1,4 +1,0 @@
-#!/bin/bash
-
-wall=$(find ~/Pictures/Wallpapers -type f -name "*" | shuf -n 1)
-swww img $wall -t grow --transition-pos top
