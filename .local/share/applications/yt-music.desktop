@@ -2,7 +2,7 @@
 Version=1.0
 Name=YT Music
 Comment=ytmusic
-Exec=librewolf --new-window music.youtube.com
+Exec=firefox --new-window music.youtube.com
 Terminal=false
 X-MultipleArgs=false
 Type=Application

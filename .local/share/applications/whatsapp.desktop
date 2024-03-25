@@ -2,7 +2,7 @@
 Version=1.0
 Name=Whatsapp
 Comment=whatsapp
-Exec=librewolf --new-window web.whatsapp.com
+Exec=firefox --new-window web.whatsapp.com
 Terminal=false
 X-MultipleArgs=false
 Type=Application
