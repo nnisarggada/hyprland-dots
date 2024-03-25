@@ -80,7 +80,7 @@
       "actions": [
         {
           "label": "",
-          "command": "gtklock"
+          "command": "hyprlock"
         },
         {
           "label": "󰍃",

@@ -13,6 +13,7 @@
 
 
 hyprpaper &
+hypridle &
 
 avizo-service &
 
