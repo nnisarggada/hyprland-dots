@@ -8,7 +8,7 @@
 - **Theme:** [Colloid-Dark](https://github.com/vinceliuice/Colloid-gtk-theme)
 - **Icons:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
-- **Browser:** [Librewolf](https://librewolf.net/)
+- **Browser:** [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - **Bar:** [Waybar](https://github.com/Alexays/Waybar)
 - **Launcher:** [Wofi](https://hg.sr.ht/~scoopta/wofi)
 - **Notifications / Control Center:** [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
