@@ -4,7 +4,7 @@
 
     "layer": "top",
 
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "custom/motivate"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
@@ -22,6 +22,12 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+
+    "custom/motivate": {
+        "format": "~ {}",
+        "exec": "~/.local/bin/motivate",
+        "interval": 10
     },
 
     "sway/mode": {
