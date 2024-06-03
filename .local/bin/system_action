@@ -1,0 +1,15 @@
+#!/bin/sh
+# A dmenu wrapper script for system functions.
+case "$(readlink -f /sbin/init)" in
+	*systemd*) ctl='systemctl' ;;
+	*) ctl='loginctl' ;;
+esac
+
+case "$(printf "lock\nlogout\nsleep\nreboot\nshutdown" | dmenu -h 45 -fn 'JetBrainsMono Nerd Font-12' -p "SYS: " -nf '#ffffff' -nb '#000000' -sf '#ffffff' -sb '#F75265')" in
+	'lock')  playerctl pause & betterlockscreen -l --time-format "%I:%M %p" ;;
+	'logout') loginctl terminate-session ${XDG_SESSION_ID-} ;;
+	'sleep') playerctl pause & betterlockscreen -l dim -l --time-format "%I:%M %p" & $ctl suspend ;;
+	'reboot') $ctl reboot ;;
+	'shutdown') $ctl poweroff ;;
+	*) exit 1 ;;
+esac

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: share <file> <link> <time>"
+  exit 1
+fi
+
+if [ -z "$3" ]; then
+  time="1800"
+  else
+  time="$3"
+fi
+
+res=$(curl -F "file=@$1" -F "link=$2" -F "time=$time" https://share.nnisarg.in)
+
+check=$(echo $res | grep "https://share.nnisarg.in")
+
+if [ -z "$check" ]; then
+  notify-send "Error sharing" "$res"
+  exit 1
+else
+  echo $res
+  printf $res | xclip -sel c && notify-send "Copied share link to clipboard"
+fi

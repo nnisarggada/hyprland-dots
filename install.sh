@@ -1,11 +1,17 @@
 #!/bin/bash
 
-mkdir ~/dl
 mkdir ~/.fonts
 mkdir ~/.icons
 mkdir ~/.local
 mkdir ~/.local/bin
-
+mkdir ~/desk
+mkdir ~/dl
+mkdir ~/dox
+mkdir ~/pub
+mkdir ~/vids
+mkdir ~/work
+mkdir ~/music
+mkdir ~/tmplts
 
 echo ""
 if ! command -v yay &>/dev/null; then
@@ -20,9 +26,7 @@ else
 fi
 echo ""
 
-required_programs=("adwaita-dark" "alacritty" "avizo" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "firefox" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting")
-
-optional_programs=("github-cli" "google-chrome" "mission-center" "neofetch" "neovim")
+required_programs=("adwaita-dark" "alacritty" "avizo" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "firefox" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "zip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting" "github-cli" "google-chrome" "mission-center" "neofetch" "neovim" "v4l2loopback-dkms" "onlyoffice-bin" "yt-dlp" "silicon" "dash" "lua" "python-pip" "man" "ripgrep" "linux-headers" "p7zip" "auto-cpufreq" "mpd" "mpv" "rsync" "gvfs" "pass")
 
 echo ""
 echo "Checking and installing required programs..."
@@ -37,24 +41,6 @@ for program in $(echo "${required_programs[@]}" | tr ' ' '\n' | sort); do
 done
 echo ""
 
-echo ""
-echo "Checking and installing optional programs..."
-for program in "${optional_programs[@]}"; do
-		if ! yay -Q "$program" >/dev/null 2>&1; then
-      read -p "Do you want to install $program? (Y/n): " install_optional
-      if [[ ! $install_optional =~ ^[nN]$ ]]; then
-        echo "Installing $program..."
-        yay -S --noconfirm --needed "$program"
-        echo "$program installed successfully!"
-      else
-        echo "Skipping $program installation."
-      fi
-		else
-			echo "$program is already installed."
-    fi
-done
-echo ""
-
 sudo cp -r .config ~/
 sudo cp -r .themes ~/
 sudo cp -r .local ~/
@@ -64,8 +50,24 @@ sudo cp -r music ~/
 sudo cp .zshrc ~/
 sudo cp .gtkrc-2.0 ~/
 
+sudo cp -r xorg.conf.d /etc/X11/
+
+mkdir pix/ss
+
 hyprpaper &
 sudo systemctl enable bluetooth
+sudo systemctl stop bluetooth
+systemctl --user enable mpd
+sudo modprobe v4l2loopback
+
+sudo npm i -g pnpm
+pnpm setup
+source ~/.zshrc
+pnpm i -g pnpm
+pnpm i -g pocketnaut
+pnpm i -g better-commits
+
+sudo auto-cpufreq --install
 
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-date true
@@ -81,4 +83,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 sudo cp -r etc/* /etc/
 
 sudo chown $USER ~/ -R
+sudo rm -rf /bin/sh
+sudo ln -s dash /bin/sh
 chsh -s /usr/bin/zsh

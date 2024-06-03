@@ -1,0 +1,8 @@
+#!/bin/sh
+
+updates=$(yay -Qu)
+
+if [[ -n "$updates" ]]; then
+    sleep 10
+    notify-send "System Updates Available!" "\n$updates"
+fi

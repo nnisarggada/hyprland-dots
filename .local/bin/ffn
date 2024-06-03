@@ -1,0 +1,5 @@
+#!/bin/sh
+
+additional_args="$@"
+
+firefox --new-window $additional_args

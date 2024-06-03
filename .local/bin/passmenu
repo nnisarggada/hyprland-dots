@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dir=$HOME/.password-store/
+
+pass=$(find $dir -iname "*.gpg" | awk -F $dir '{print $2}' | cut -d '.' -f 1 | ~/.local/bin/dmen -p "PASS:")
+
+pass $pass -c && notify-send "Password copied!" "Password for $pass copied to clipboard"

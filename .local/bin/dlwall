@@ -1,0 +1,135 @@
+#!/bin/sh
+
+# the dir where wallpapers are stored
+walldir="$HOME/pix/walls"
+# the dir used to cache thumbnails
+cachedir="$HOME/.cache/wallpapers"
+# sxiv options
+sxiv_otps=" -tfpo -z 200" # o is needed for selection
+# number of pages to show in search results
+# each page contains 24 results
+max_pages=4
+# sorting : date_added, relevance, random, views, favorites, toplist
+sorting=relevance
+# quality : large original small
+quality=large
+# atleast : least res
+atleast=1920x1080
+
+##########################
+## getting search query ##
+##########################
+
+[ -n "$*" ] && query="$*" || query=$( sh_menu )
+[ -z "$query" ] && exit 1
+query=$(printf '%s' "$query" | tr ' ' '+' )
+
+######################
+## start up commands #
+######################
+
+rm -rf "$cachedir"
+mkdir -p "$walldir" "$cachedir"
+
+# progress display command
+sh_info () {
+	printf "%s\n" "$1" >&2
+	notify-send "Wallhaven" "$1"
+	[ -n "$2" ] && exit "$2"
+}
+
+# dependency checking
+dep_ck () {
+	for pr; do
+		command -v $pr >/dev/null 2>&1 || sh_info "command $pr not found, install: $pr" 1
+	done
+}
+dep_ck "sxiv" "curl" "jq"
+
+
+# clean up command that would be called when the program exits
+clean_up () {
+	printf "%s\n" "Cleaning Up..." >&2
+	rm -rf "$datafile" "$cachedir"
+}
+
+# data file to store the api information
+datafile="/tmp/wald.$$"
+
+# clean up if killed
+trap "exit" INT TERM
+trap "clean_up" EXIT
+
+##################
+## getting data ##
+##################
+
+# request the search results for each page
+get_results () {
+	for page_no in $(seq $max_pages)
+	do
+		{
+			json=$(curl -s -G "https://wallhaven.cc/api/v1/search" \
+					-d "q=$1" \
+					-d "page=$page_no" \
+					-d "atleast=$atleast" \
+					-d "sorting=$sorting"
+				)
+			printf "%s\n" "$json" >> "$datafile"
+		} &
+		sleep 0.001
+	done
+	wait
+}
+
+# search wallpapers
+sh_info "Getting Data..."
+get_results "$query"
+
+# check if data file is empty, if so then exit
+[ -s "$datafile" ] || sh_info "No Images Found" 1 
+
+############################
+## downloading thumbnails ##
+############################
+
+# get a list of thumnails from the data
+thumbnails=$( jq -r '.data[]?|.thumbs.'"$quality" < "$datafile")
+
+[ -z "$thumbnails" ] && sh_info "No Results Found" 1
+
+# download the thumbnails
+sh_info "Caching Thumbnails..."
+for url in $thumbnails
+do
+		printf "url = %s\n" "$url"
+		printf "output = %s\n" "$cachedir/${url##*/}"
+done | curl -Z -K -
+#sh_info "Downloaded Thumbnails..."
+
+###########################
+## user selection (sxiv) ##
+###########################
+
+# extract the id's out of the thumbnail name
+image_ids="$(sxiv $sxiv_otps "$cachedir")"
+[ -z "$image_ids" ] && exit
+
+#########################
+## download wallpapers ##
+#########################
+
+# download the selected wall papers
+cd "$walldir"
+sh_info "Downloading Wallpapers..."
+for ids in $image_ids
+do
+	ids="${ids##*/}"
+	ids="${ids%.*}"
+	url=$( jq -r '.data[]?|select( .id == "'$ids'" )|.path' < "$datafile" )
+	printf "url = %s\n" "$url"
+	printf -- "-O\n"
+done | curl -K -
+
+sh_info "Wallpapers downloaded in '$walldir'"
+sxiv $(ls -c)

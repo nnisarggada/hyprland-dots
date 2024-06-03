@@ -31,19 +31,16 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
+  use("tpope/vim-sleuth") -- detect tabstop and shiftwidth automatically
+
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
   use("szw/vim-maximizer") -- maximizes and restores current window
 
-  -- tokyodark
-  use({
-    "tiagovla/tokyodark.nvim",
-    config = function()
-      vim.cmd("colorscheme tokyodark")
-    end,
-  })
+  -- gruvbox
+  use("ellisonleao/gruvbox.nvim")
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
@@ -56,7 +53,7 @@ return packer.startup(function(use)
   use("nvim-tree/nvim-tree.lua")
 
   -- vs-code like icons
-  use({ "nvim-tree/nvim-web-devicons", commit = "d7f598ed63a66d6dce1117c61b0d5ba71b7c45e8" })
+  use("nvim-tree/nvim-web-devicons")
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
@@ -89,7 +86,8 @@ return packer.startup(function(use)
       { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" },
     },
-  }) -- enhanced lsp uis
+  })
+  -- enhanced lsp uis
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
@@ -113,19 +111,8 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-  -- transparency
-  use({
-    "xiyaowong/nvim-transparent",
-    config = function()
-      vim.g.transparent_enabled = true
-    end,
-  })
-
   -- colorizer
   use("chrisbra/Colorizer")
-
-  -- indent line
-  use("lukas-reineke/indent-blankline.nvim")
 
   -- codeium
   use("Exafunction/codeium.vim")
@@ -133,66 +120,85 @@ return packer.startup(function(use)
   -- astro.build
   use("wuelnerdotexe/vim-astro")
 
-  -- flutter tools
+  -- highlight undo
   use({
-    "akinsho/flutter-tools.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim", -- optional for vim.ui.select
-    },
+    "tzachar/highlight-undo.nvim",
+    config = function()
+      require("highlight-undo").setup()
+    end,
+  })
 
-    -- highlight undo
-    use({
-      "tzachar/highlight-undo.nvim",
-      config = function()
-        require("highlight-undo").setup()
-      end,
-    }),
+  -- markdown preview
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
 
-    -- markdown preview
-    use({
-      "iamcco/markdown-preview.nvim",
-      run = function()
-        vim.fn["mkdp#util#install"]()
-      end,
-    }),
+  -- transparent
+  use({
+    "xiyaowong/nvim-transparent",
+    config = function()
+      require("transparent").setup({
+        extra_groups = {
+          "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+          "NvimTreeNormal", -- NvimTree
+        },
+      })
+    end,
+  })
 
-    -- silicon
-    use({
-      "michaelrommel/nvim-silicon",
-      cmd = "Silicon",
-      config = function()
-        local function get_home_directory()
-          local user = vim.fn.expand("$USER")
-          return "/home/" .. user
-        end
+  -- silicon
+  use({
+    "michaelrommel/nvim-silicon",
+    cmd = "Silicon",
+    config = function()
+      local function get_home_directory()
+        local user = vim.fn.expand("$USER")
+        return "/home/" .. user
+      end
 
-        require("silicon").setup({
-          font = "JetBrains Mono NF=34;Noto Color Emoji=34",
-          theme = "Dracula",
-          background_image = get_home_directory() .. "/.config/silicon/bg.jpg",
-          no_line_number = true,
-          language = function()
-            return vim.bo.filetype
-          end,
-          shadow_blur_radius = 16,
-          shadow_offset_x = 8,
-          shadow_offset_y = 8,
-          shadow_color = "#100808",
-          gobble = true,
-          window_title = function()
-            return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
-          end,
-          output = function()
-            return "./silicon_" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
-          end,
-        })
-      end,
-    }),
+      require("silicon").setup({
+        font = "JetBrains Mono NF=34;Noto Color Emoji=34",
+        theme = "Dracula",
+        background_image = get_home_directory() .. "/.config/silicon/bg.jpg",
+        no_line_number = true,
+        language = function()
+          if vim.bo.filetype == "astro" then
+            return "jsx"
+          end
+          return vim.bo.filetype
+        end,
+        shadow_blur_radius = 16,
+        shadow_offset_x = 8,
+        shadow_offset_y = 8,
+        shadow_color = "#100808",
+        gobble = true,
+        window_title = function()
+          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
+        end,
+        output = function()
+          return "./silicon_" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
+        end,
+      })
+    end,
   })
 
   -- git blame
   use("f-person/git-blame.nvim")
+
+  -- dashboard
+  use({ "goolord/alpha-nvim", requires = { "lewis6991/impatient.nvim" } })
+
+  -- whichkey
+  use("folke/which-key.nvim")
+
+  -- bufferline
+  use("akinsho/bufferline.nvim")
+
+  -- toggleterm
+  use("akinsho/toggleterm.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

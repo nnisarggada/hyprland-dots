@@ -1,0 +1,7 @@
+#!/bin/sh
+
+while true; do
+  notify-send "Water Reminder" "Time to drink water!"
+  paplay --volume=49152 $HOME/.local/share/sounds/rick_water.wav
+  sleep 3600
+done

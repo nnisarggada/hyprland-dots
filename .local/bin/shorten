@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: shorten <url> <link>"
+  exit 1
+fi
+
+res=$(curl -F "url=$1" -F "short_url=$2" https://short.nnisarg.in)
+
+check=$(echo $res | grep "https://short.nnisarg.in")
+
+if [ -z "$check" ]; then
+  notify-send "Error shortening" "$res"
+  exit 1
+else
+  echo $res
+  printf $res | xclip -sel c && notify-send "Copied shortened link to clipboard"
+fi

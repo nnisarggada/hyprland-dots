@@ -5,4 +5,12 @@ if not setup then
 end
 
 -- configure/enable gitsigns
-gitsigns.setup()
+gitsigns.setup({
+  signs = {
+    add = { text = "+" },
+    change = { text = "~" },
+    delete = { text = "_" },
+    topdelete = { text = "‾" },
+    changedelete = { text = "~" },
+  },
+})
