@@ -4,14 +4,13 @@
 
     "layer": "top",
 
-    "modules-left": ["hyprland/workspaces", "custom/motivate"],
+    "modules-left": ["hyprland/workspaces", "custom/splash"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
 
-    "custom/motivate": {
+    "custom/splash": {
         "format": " ~ {}",
-        "exec": "~/.local/bin/motivate",
-        "interval": 10
+        "exec": "hyprctl splash",
     },
 
     "custom/swaync": {
