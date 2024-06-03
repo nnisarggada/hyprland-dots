@@ -26,7 +26,7 @@ else
 fi
 echo ""
 
-required_programs=("adwaita-dark" "alacritty" "avizo" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "firefox" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "zip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting" "github-cli" "google-chrome" "mission-center" "neofetch" "neovim" "v4l2loopback-dkms" "onlyoffice-bin" "yt-dlp" "silicon" "dash" "lua" "python-pip" "man" "ripgrep" "linux-headers" "p7zip" "auto-cpufreq" "mpd" "mpv" "rsync" "gvfs" "pass" "bemenu")
+required_programs=("adwaita-dark" "alacritty" "avizo" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "copyq" "evtest" "firefox" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look-bin" "pamixer" "papirus-icon-theme" "pavucontrol" "qt5-wayland" "qt5ct" "qt5-styleplugins" "qt6-wayland" "swaync" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "zip" "udiskie" "udisks2" "waybar" "wireplumber" "wl-clipboard" "wofi" "wofi-calc" "wofi-emoji" "xdg-desktop-portal-hyprland" "xwaylandvideobridge-cursor-mode-2-git" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting" "github-cli" "google-chrome" "mission-center" "neofetch" "neovim" "v4l2loopback-dkms" "onlyoffice-bin" "yt-dlp" "silicon" "dash" "lua" "python-pip" "man" "ripgrep" "linux-headers" "p7zip" "auto-cpufreq" "mpd" "mpv" "rsync" "gvfs" "pass" "bemenu-wayland")
 
 echo ""
 echo "Checking and installing required programs..."
@@ -53,6 +53,8 @@ sudo cp .gtkrc-2.0 ~/
 sudo cp -r xorg.conf.d /etc/X11/
 
 mkdir pix/ss
+
+sudo chown $USER ~/ -R
 
 hyprpaper &
 sudo systemctl enable bluetooth
@@ -81,7 +83,6 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 sudo cp -r etc/* /etc/
 
-sudo chown $USER ~/ -R
 sudo rm -rf /bin/sh
 sudo ln -s dash /bin/sh
 chsh -s /usr/bin/zsh

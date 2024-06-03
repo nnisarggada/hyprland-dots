@@ -1,4 +1,4 @@
 #!/bin/sh
 
 additional_args="$@"
-dmenu-wl -H 51 --ch 25 --cw 2 --hp 10 --tb '#5b9bf8' --tf '#000000' --hb '#CAD5FF' --hf '#000000' --fn 'JetBrains Mono NF Bold 16px' --cf '#CAD5FF' --ff '#CAD5FF' -i $additional_args
+bemenu -H 51 --ch 25 --cw 2 --hp 10 --tb '#5b9bf8' --tf '#000000' --hb '#CAD5FF' --hf '#000000' --fn 'JetBrains Mono NF Bold 16px' --cf '#CAD5FF' --ff '#CAD5FF' -i $additional_args
