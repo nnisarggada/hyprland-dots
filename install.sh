@@ -56,7 +56,6 @@ mkdir pix/ss
 
 hyprpaper &
 sudo systemctl enable bluetooth
-sudo systemctl stop bluetooth
 systemctl --user enable mpd
 sudo modprobe v4l2loopback
 
