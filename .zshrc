@@ -1,8 +1,6 @@
-# Luke's config for the Zoomer Shell
-
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[magenta]%}%~%{$fg[red]%} >%{$reset_color%}%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -71,6 +69,9 @@ bindkey '^e' edit-command-line
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    exec startx
+fi
 
 #My config
 export PATH=$HOME/.local/bin:$PATH
@@ -87,3 +88,8 @@ setopt autocd
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+alias gc='git clone --depth=1'
+
+alias bc='better-commits'
+alias pn='pocketnaut'

@@ -14,5 +14,5 @@ if [ -z "$check" ]; then
   exit 1
 else
   echo $res
-  printf $res | xclip -sel c && notify-send "Copied shortened link to clipboard"
+  printf $res | wl-copy && notify-send "Copied shortened link to clipboard"
 fi

@@ -20,5 +20,5 @@ if [ -z "$check" ]; then
   exit 1
 else
   echo $res
-  printf $res | xclip -sel c && notify-send "Copied share link to clipboard"
+  printf $res | wl-copy && notify-send "Copied share link to clipboard"
 fi
