@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-res=$(curl -F "url=$1" -F "short_url=$2" https://short.nnisarg.in)
+res=$(curl -F "url=$1" -F "short_url=$2" short.nnisarg.in)
 
 check=$(echo $res | grep "https://short.nnisarg.in")
 
