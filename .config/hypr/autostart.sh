@@ -18,8 +18,6 @@ bluetoothctl power off &
 hyprpaper &
 hypridle &
 
-caffeine &
-
 avizo-service &
 
 ~/.config/waybar/start &
