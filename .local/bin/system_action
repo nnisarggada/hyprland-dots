@@ -6,9 +6,9 @@ case "$(readlink -f /sbin/init)" in
 esac
 
 case "$(printf "lock\nlogout\nsleep\nreboot\nshutdown" | ~/.local/bin/dmen -p "SYS: " --tb '#F75265')" in
-	'lock')  playerctl pause & hyprlock -l --time-format "%I:%M %p" ;;
+	'lock')  playerctl pause & gtklock;;
 	'logout') loginctl terminate-session ${XDG_SESSION_ID-} ;;
-	'sleep') playerctl pause & hyprlock -l dim -l --time-format "%I:%M %p" & $ctl suspend ;;
+	'sleep') playerctl pause & gtklock & $ctl suspend ;;
 	'reboot') $ctl reboot ;;
 	'shutdown') $ctl poweroff ;;
 	*) exit 1 ;;
