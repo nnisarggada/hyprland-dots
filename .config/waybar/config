@@ -1,146 +1,129 @@
 {
-    "height": 45,
-    "spacing": 4,
+	"layer": "bottom",
+	"position": "top",
+	"height": 32,
+	"spacing": 0,
 
-    "layer": "top",
+	"tooltip": false,
 
-    "modules-left": ["hyprland/workspaces", "custom/splash"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "pulseaudio", "battery", "battery#bat2", "clock", "custom/swaync"],
+	"margin-top": 12,
+	"margin-left": 12,
+	"margin-right": 12,
 
-    "custom/splash": {
-        "format": " ~ {}",
-        "exec": "hyprctl splash",
-    },
+	"modules-left": [
+		"custom/spacing",
+		"custom/workspaces", "hyprland/workspaces"
+	],
 
-    "custom/swaync": {
-        "format": " ",
-        "on-click": "sleep 0.1 && ~/.config/swaync/scripts/tray_waybar.sh",
-        "tooltip": false
-    },
+  "modules-center": [
+    "hyprland/window"
+  ],
 
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
+	"modules-right": [
+		"custom/volume", "wireplumber",
+		"custom/mic", "pulseaudio",
+//    "custom/battery", "battery",
+		"custom/time","clock",
+		"custom/spacing"
+	],
 
-    "hyprland/window": {
-        "format": "{title}",
-        "max-length": 50,
-    },
-
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-
-    "tray": {
-        "spacing": 10
-    },
-
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d %B %Y | %A}",
-        "format": "{:%I:%M %p}"
-    },
-
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-
-    "memory": {
-        "format": "{}% "
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}%  ",
-        "format-alt": "{time} {icon}",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
-
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-
-    "pulseaudio": {
-        "scroll-step": 10,
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
-        "format-muted": "󰝟 {format_source}",
-        "format-source": " {volume}% ",
-        "format-source-muted": "  ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
+	"hyprland/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": true,
+		"active-only": false,
+		"format": "{icon}",
+		"persistent-workspace": true,
+		"alphabetical_sort": true,
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+		},
+		"format-icons": {
+			"1": "first",
+			"2": "second",
+			"3": "third",
+			"4": "fourth",
+			"5": "fifth",
+			"6": "sixth",
+			"7": "seventh",
+			"8": "eigth",
+			"9": "ninth",
+			"10": "tenth",
+		}
+	},
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "en",
+		"format-sk": "sk",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	},
+	"custom/workspaces": {
+		"tooltip": false,
+		"format": "workspaces"
+	},
+	"custom/volume": {
+		"tooltip": false,
+		"format": "volume",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	},
+	"custom/mic": {
+		"tooltip": false,
+		"format": "mic",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+	},
+	"custom/battery": {
+		"tooltip": false,
+		"format": "battery"
+	},
+	"custom/layout": {
+		"tooltip": false,
+		"format": "layout",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	},
+	"custom/time": {
+		"tooltip": false,
+		"format": "time"
+	},
+	"custom/spacing": {
+		"tooltip": false,
+		"format": " "
+	},
+	"clock": {
+		"format": "{:%I:%M}",
+		"format-alt": "{:%d-%m-%Y - %A}",
+		"tooltip": false,
+	},
+	"backlight": {
+		"format": "{percent}%",
+		"tooltip": false,
+		"scroll-step": 5.0,
+	},
+	"wireplumber": {
+		"format": "{volume}%",
+		"format-muted": "muted",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"tooltip": false,
+		"scroll-step": 5.0,
+	},
+  "pulseaudio": {
+		"format": "{format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "muted",
+		"tooltip": false,
+		"scroll-step": 5.0,
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+	},
+	"battery": {
+		"format": "{capacity}%",
+		"tooltip": false,
+	}
 }

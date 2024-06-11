@@ -1,4 +1,7 @@
 #!/bin/sh
 
+. "${HOME}/.cache/wal/colors.sh"
+
 additional_args="$@"
-bemenu -H 51 --ch 25 --cw 2 --hp 10 --tb '#5b9bf8' --tf '#000000' --hb '#CAD5FF' --hf '#000000' --fn 'JetBrains Mono NF Bold 16px' --cf '#CAD5FF' --ff '#CAD5FF' -i $additional_args
+bemenu -H 51 --ch 25 --cw 2 --hp 10 --tb "$color1" --tf "$color5" --hb "$color2" --hf "$color7" --fn 'Courier Prime Bold 14px' --cf "$cursor" --ff "$cursor" -i $additional_args
+

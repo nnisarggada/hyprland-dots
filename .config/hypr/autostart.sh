@@ -15,20 +15,15 @@
 ~/.local/bin/drink_water &
 bluetoothctl power off &
 
+wal -i ~/pix/walls/wallpaper.png &
+
 hyprpaper &
 hypridle &
-
-avizo-service &
 
 ~/.config/waybar/start &
 ~/.config/swaync/start &
 
-nm-applet &
-blueman-applet &
-
 lxsession &
-
-copyq &
 
 udiskie &
 
