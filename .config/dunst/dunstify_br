@@ -1,0 +1,46 @@
+#!/bin/bash
+
+. ~/.cache/wal/colors.sh
+
+# By abxh (github)
+
+tag="string:x-dunst-stack-tag:brightness"
+path="/sys/class/backlight/amdgpu_bl1/"
+
+notify() {
+	value="$1"
+	dunstify -h int:value:$percent -h string:hlcolor:$foreground \
+		-h $tag -u low \
+		"Brightness" \
+		"$percent%"
+}
+
+case "$1" in
+--inc | -i)
+	brightnessctl s +5%
+	raw_val=$(brightnessctl g)
+	max_val=$(brightnessctl m)
+	percent=$(((raw_val * 100) / max_val))
+	notify
+	;;
+--dec | -d)
+	brightnessctl s 5%-
+	raw_val=$(brightnessctl g)
+	max_val=$(brightnessctl m)
+	percent=$(((raw_val * 100) / max_val))
+	notify
+	;;
+--get | -g)
+	raw_val=$(brightnessctl g)
+	max_val=$(brightnessctl m)
+	percent=$(((raw_val * 100) / max_val))
+	echo $percent
+	;;
+*)
+	echo "Usage: [SCRIPT] [COMMAND] [VALUE]"
+	echo "Commands:"
+	echo "  --inc/-i:			Increase brightness."
+	echo "  --dec/-d:			Decrease brightness."
+	echo "  --get/-g:			Get brightness by raw value."
+	;;
+esac
