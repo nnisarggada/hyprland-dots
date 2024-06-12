@@ -73,8 +73,8 @@ gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface document-font-name 'Courier Prime 12'
-gsettings set org.gnome.desktop.interface font-name 'Courier Prime 12'
+gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 12'
+gsettings set org.gnome.desktop.interface font-name 'Cantarell 12'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Courier Prime Pro 12'
 gsettings set org.gnome.desktop.interface gtk-theme 'Colloid-Green-Dark-Gruvbox'
 gsettings set org.gnome.desktop.interface icon-theme 'gruvbox-dark-icons-gtk'
