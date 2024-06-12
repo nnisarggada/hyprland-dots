@@ -11,7 +11,7 @@ if [ -z "$3" ]; then
   time="$3"
 fi
 
-res=$(curl -F "file=@$1" -F "link=$2" -F "time=$time" share.nnisarg.in)
+res=$(curl -F "file=@$1" -F "link=$2" -F "time=$time" https://share.nnisarg.in)
 
 check=$(echo $res | grep "https://share.nnisarg.in")
 
