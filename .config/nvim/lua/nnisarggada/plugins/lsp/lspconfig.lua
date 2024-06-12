@@ -115,3 +115,9 @@ lspconfig["astro"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+-- configure python server
+lspconfig["pyright"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
