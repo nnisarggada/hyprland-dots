@@ -51,8 +51,6 @@ sudo cp -r xorg.conf.d /etc/X11/
 
 mkdir pix/ss
 
-sed -i "s/nnisarggada/$USER/g" ~/.config/wal/templates/dunstrc
-
 sudo chown $USER ~/ -R
 
 hyprpaper &
