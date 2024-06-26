@@ -49,7 +49,7 @@ sudo cp .gtkrc-2.0 ~/
 
 sudo cp -r xorg.conf.d /etc/X11/
 
-mkdir pix/ss
+mkdir ~/pix/ss
 
 sudo chown $USER ~/ -R
 
