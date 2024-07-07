@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ $# -eq 0 ]; then
-  firefox "https://search.brave.com/"
-else
-  search_query="$*"
-  encoded_query=$(echo "$search_query" | sed 's/ /+/g')
-  firefox --new-window "https://search.brave.com/search?q=${encoded_query}"
-fi
