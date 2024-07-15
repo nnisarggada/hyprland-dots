@@ -194,9 +194,6 @@ return packer.startup(function(use)
   -- dashboard
   use({ "goolord/alpha-nvim", requires = { "lewis6991/impatient.nvim" } })
 
-  -- whichkey
-  use("folke/which-key.nvim")
-
   -- bufferline
   use("akinsho/bufferline.nvim")
 
