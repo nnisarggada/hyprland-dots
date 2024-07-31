@@ -1,5 +1,0 @@
-#!/bin/sh
-
-additional_args="$@"
-
-firefox $additional_args
