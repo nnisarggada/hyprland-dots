@@ -1,0 +1,5 @@
+#!/bin/sh
+
+additional_args="$@"
+
+thorium-browser --new-window $additional_args
