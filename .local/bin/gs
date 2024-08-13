@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-  thorium-browser "https://www.google.com/"
+  firefox "https://www.google.com/"
 else
   search_query="$*"
   encoded_query=$(echo "$search_query" | sed 's/ /+/g')
-  thorium-browser "https://www.google.com/search?q=${encoded_query}"
+  firefox "https://www.google.com/search?q=${encoded_query}"
 fi

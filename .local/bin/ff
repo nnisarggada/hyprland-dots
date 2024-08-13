@@ -2,4 +2,4 @@
 
 additional_args="$@"
 
-thorium-browser $additional_args
+firefox $additional_args
