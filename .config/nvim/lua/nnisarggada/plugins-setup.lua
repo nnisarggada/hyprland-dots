@@ -162,7 +162,7 @@ return packer.startup(function(use)
         return "/home/" .. user
       end
 
-      require("silicon").setup({
+      require("nvim-silicon").setup({
         font = "JetBrains Mono NF=34;Noto Color Emoji=34",
         theme = "Dracula",
         background_image = get_home_directory() .. "/.config/silicon/bg.jpg",
