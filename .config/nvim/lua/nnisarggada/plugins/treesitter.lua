@@ -25,6 +25,7 @@ treesitter.setup({
     "lua",
     "vim",
     "astro",
+    "python",
   },
   -- auto install above language parsers
   auto_install = true,
