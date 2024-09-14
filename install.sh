@@ -15,11 +15,11 @@ mkdir ~/tmplts
 
 echo ""
 if ! command -v yay &>/dev/null; then
-	git clone https://aur.archlinux.org/yay-bin
-	cd yay-bin
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
 	makepkg -si
 	cd ../
-	yay && rm -rf yay-bin
+	yay && rm -rf yay
 else
 	echo "YAY already installed."
 	yay
