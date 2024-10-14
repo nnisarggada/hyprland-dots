@@ -11,7 +11,7 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
+local typescript_setup, typescript = pcall(require, "ts_ls")
 if not typescript_setup then
   return
 end
@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
 
   -- typescript specific keymaps (e.g. rename file and update imports)
-  if client.name == "tsserver" then
+  if client.name == "ts_ls" then
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
     keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports
     keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables

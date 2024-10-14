@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.cache/wal/colors.sh
+foreground="#D4C8B2"
 
 # By abxh (github)
 
