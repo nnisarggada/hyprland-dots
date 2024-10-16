@@ -16,6 +16,12 @@ if not typescript_setup then
   return
 end
 
+-- import null-ls plugin safely
+local null_ls_status, null_ls = pcall(require, "null-ls")
+if not null_ls_status then
+  return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
