@@ -125,6 +125,7 @@
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
 	},
 	"battery": {
+    "interval": 5,
 		"format": "{capacity}%",
     "format-discharging": "{capacity}%",
     "format-charging": "{capacity}% [charging]",
