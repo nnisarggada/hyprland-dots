@@ -8,13 +8,10 @@ tooltip {
 }
 
 window#waybar {
-  border: 2px solid rgba(158, 148, 137, 0.13);
-  border-radius: 6px;
-
-  background-color: rgba(12, 12, 9, 0.5);
-
+  background-color: rgba(12, 12, 9, 0.75);
   transition-property: background-color;
   transition-duration: 0.5s;
+  padding: 5px;
 }
 
 #custom-volume,

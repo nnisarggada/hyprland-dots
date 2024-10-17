@@ -1,14 +1,14 @@
 {
 	"layer": "bottom",
 	"position": "top",
-	"height": 32,
+	"height": 35,
 	"spacing": 0,
 
 	"tooltip": false,
 
-	"margin-top": 12,
-	"margin-left": 12,
-	"margin-right": 12,
+	"margin-top": 0,
+	"margin-left": 0,
+	"margin-right": 0,
 
 	"modules-left": [
 		"custom/workspaces", "hyprland/workspaces",
@@ -21,7 +21,7 @@
 	"modules-right": [
 		"custom/volume", "wireplumber",
 		"custom/mic", "pulseaudio",
-//    "custom/battery", "battery",
+    "custom/battery", "battery",
 		"custom/time", "clock",
 	],
 
