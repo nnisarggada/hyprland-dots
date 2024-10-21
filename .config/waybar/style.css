@@ -14,6 +14,13 @@ window#waybar {
   padding: 5px;
 }
 
+#custom-check_cam {
+  background: #90ee90;
+  color: #000000;
+  padding: 5px;
+  font-weight: 700;
+}
+
 #custom-volume,
 #custom-mic,
 #custom-battery,

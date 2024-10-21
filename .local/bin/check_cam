@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Check if the webcam device is being used
+if [ $(lsof /dev/video* | wc -l) -gt 0 ] ; then
+    echo "   "
+fi

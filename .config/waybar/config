@@ -19,9 +19,10 @@
   ],
 
 	"modules-right": [
+    "custom/check_cam",
 		"custom/volume", "wireplumber",
 		"custom/mic", "pulseaudio",
-    "custom/battery", "battery",
+//    "custom/battery", "battery",
 		"custom/time", "clock",
 	],
 
@@ -60,6 +61,11 @@
 		"format-sk": "sk",
 		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
+  "custom/check_cam": {
+    "exec": "~/.local/bin/check_cam",
+    "interval": 5,
+    "tooltip-format": "Camera ON!"
+  },
 	"custom/workspaces": {
 		"tooltip": false,
 		"format": "workspaces"
