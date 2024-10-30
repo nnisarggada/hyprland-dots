@@ -129,6 +129,7 @@
 		"tooltip": true,
 	},
   "network": {
+    "interval": 1,
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%)",
     "format-ethernet": "[ethernet] ({bandwidthTotalBytes})",
