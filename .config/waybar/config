@@ -11,7 +11,7 @@
 	"margin-right": 0,
 
 	"modules-left": [
-		"custom/workspaces", "hyprland/workspaces",
+		"hyprland/workspaces",
 	],
 
   "modules-center": [
@@ -20,6 +20,7 @@
 
 	"modules-right": [
     "custom/check_cam",
+    "custom/wifi", "network",
 		"custom/volume", "wireplumber",
 		"custom/mic", "pulseaudio",
 //    "custom/battery", "battery",
@@ -42,18 +43,7 @@
 			"4": [],
 			"5": [],
 		},
-		"format-icons": {
-			"1": "first",
-			"2": "second",
-			"3": "third",
-			"4": "fourth",
-			"5": "fifth",
-			"6": "sixth",
-			"7": "seventh",
-			"8": "eigth",
-			"9": "ninth",
-			"10": "tenth",
-		}
+		
 	},
 	"hyprland/language": {
 		"format": "{}",
@@ -139,11 +129,15 @@
 		"tooltip": true,
 	},
   "network": {
+    "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet": "{essid} ({signalStrength}%)",
+    "format-ethernet": "[ethernet] ({bandwidthTotalBytes})",
+    "format-disconnected": "[disconnected]",
     "tooltip-format": "{ifname} via {gwaddr}",
-    "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "[disconnected]"
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "[disconnected]",
+    "max-length": 50
   },
   "hyprland/window": {
     "format": "{title}",
