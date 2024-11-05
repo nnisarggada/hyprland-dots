@@ -49,8 +49,12 @@ window#waybar {
   font-weight: 600;
 }
 
+#window {
+  padding-left: 10px;
+}
+
 #clock {
-  padding-right: 10px;
+  padding: 10px 5px;
 }
 
 button {

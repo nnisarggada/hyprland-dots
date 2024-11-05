@@ -12,10 +12,10 @@
 
 	"modules-left": [
 		"hyprland/workspaces",
+    "hyprland/window",
 	],
 
   "modules-center": [
-    "hyprland/window",
   ],
 
 	"modules-right": [
