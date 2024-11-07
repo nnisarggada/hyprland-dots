@@ -23,7 +23,7 @@
     "custom/wifi", "network",
 		"custom/volume", "wireplumber",
 		"custom/mic", "pulseaudio",
-//    "custom/battery", "battery",
+    "custom/battery", "battery",
 		"custom/time", "clock",
 	],
 
