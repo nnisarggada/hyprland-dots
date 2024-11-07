@@ -93,3 +93,7 @@ alias gc='git clone --depth=1'
 
 alias bc='better-commits'
 alias pn='pocketnaut'
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
