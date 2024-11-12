@@ -200,6 +200,15 @@ return packer.startup(function(use)
   -- toggleterm
   use("akinsho/toggleterm.nvim")
 
+  -- flutter
+  use({
+    "nvim-flutter/flutter-tools.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+  })
+
   if packer_bootstrap then
     require("packer").sync()
   end
