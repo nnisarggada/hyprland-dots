@@ -138,7 +138,6 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ipaddr}/{cidr}",
     "tooltip-format-disconnected": "[disconnected]",
-    "max-length": 50
   },
   "hyprland/window": {
     "format": "{title}",
