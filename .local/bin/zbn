@@ -1,5 +1,0 @@
-#!/bin/sh
-
-additional_args="$@"
-
-zen-browser --new-window $additional_args

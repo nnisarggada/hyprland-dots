@@ -2,4 +2,4 @@
 
 additional_args="$@"
 
-zen-browser $additional_args
+librewolf $additional_args

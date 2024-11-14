@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-  zen-browser --new-window "https://www.youtube.com"
+  librewolf --new-window "https://www.youtube.com"
 else
   search_query="$*"
   encoded_query=$(echo "$search_query" | sed 's/ /+/g')
-  zen-browser --new-window "https://www.youtube.com/results?search_query=$encoded_query"
+  librewolf --new-window "https://www.youtube.com/results?search_query=$encoded_query"
 fi

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-zen-browser --new-window "https://discord.com/channels/@me"
+librewolf --new-window "https://discord.com/channels/@me"

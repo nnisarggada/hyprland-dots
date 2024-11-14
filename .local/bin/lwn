@@ -1,0 +1,5 @@
+#!/bin/sh
+
+additional_args="$@"
+
+librewolf --new-window $additional_args
