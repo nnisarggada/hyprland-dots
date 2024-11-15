@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TEXT="$(playerctl metadata --format '{{ title }} - {{ artist }}')"
+
+# Escape special characters for GTK markup
+ESCAPED_TEXT=$(echo "$TEXT" | sed 's/&/&amp;/g')
+
+if [ "$TEXT" = "No players found" ]; then
+  echo ""
+else
+  echo "$ESCAPED_TEXT"
+fi

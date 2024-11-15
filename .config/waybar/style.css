@@ -35,6 +35,7 @@ window#waybar {
   border-left: 2px solid rgba(158, 148, 137, 0.13);
 }
 
+#custom-nowplaying,
 #window,
 #wireplumber,
 #pulseaudio,
@@ -51,10 +52,6 @@ window#waybar {
 
 #window {
   padding-left: 10px;
-}
-
-#clock {
-  padding: 10px 5px;
 }
 
 button {

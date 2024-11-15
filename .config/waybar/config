@@ -1,7 +1,7 @@
 {
 	"layer": "bottom",
 	"position": "bottom",
-	"height": 35,
+	"height": 40,
 	"spacing": 0,
 
 	"tooltip": false,
@@ -16,6 +16,7 @@
 	],
 
   "modules-center": [
+    "custom/nowplaying",
   ],
 
 	"modules-right": [
@@ -23,7 +24,7 @@
     "custom/wifi", "network",
 		"custom/volume", "wireplumber",
 		"custom/mic", "pulseaudio",
-    "custom/battery", "battery",
+//    "custom/battery", "battery",
 		"custom/time", "clock",
 	],
 
@@ -51,6 +52,11 @@
 		"format-sk": "sk",
 		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
+  "custom/nowplaying": {
+    "exec": "~/.local/bin/now-playing",
+    "interval": 1,
+    "max-length": 50,
+  },
   "custom/check_cam": {
     "exec": "~/.local/bin/check_cam",
     "interval": 5,
