@@ -15,7 +15,7 @@
 ~/.local/bin/drink_water &
 bluetoothctl power off &
 
-wal -i ~/pix/walls/wallpaper.png &
+wal -i ~/pix/walls/flower.jpg &
 
 hyprpaper &
 hypridle &
