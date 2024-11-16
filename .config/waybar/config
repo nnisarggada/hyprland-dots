@@ -33,18 +33,14 @@
 		"all-outputs": true,
 		"active-only": false,
 		"format": "{icon}",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+    },
 		"persistent-workspace": true,
 		"alphabetical_sort": true,
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
-		"persistent-workspaces": {
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": [],
-		},
-		
 	},
 	"hyprland/language": {
 		"format": "{}",
