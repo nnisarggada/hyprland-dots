@@ -1,135 +1,135 @@
 {
-	"layer": "bottom",
-	"position": "top",
-	"height": 40,
-	"spacing": 0,
+  "layer": "bottom",
+  "position": "top",
+  "height": 40,
+  "spacing": 0,
 
-	"tooltip": false,
+  "tooltip": false,
 
-	"margin-top": 0,
-	"margin-left": 0,
-	"margin-right": 0,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
 
-	"modules-left": [
-		"hyprland/workspaces",
-    "hyprland/window",
-	],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
 
-  "modules-center": [
-    "custom/nowplaying",
+  "modules-center": ["custom/nowplaying"],
+
+  "modules-right": [
+    "custom/check_cam",
+    "custom/wifi",
+    "network",
+    "custom/volume",
+    "wireplumber",
+    "custom/mic",
+    "pulseaudio",
+    "custom/battery",
+    "battery",
+    "custom/time",
+    "clock"
   ],
 
-	"modules-right": [
-    "custom/check_cam",
-    "custom/wifi", "network",
-		"custom/volume", "wireplumber",
-		"custom/mic", "pulseaudio",
-    "custom/battery", "battery",
-		"custom/time", "clock",
-	],
-
-	"hyprland/workspaces": {
-		"disable-scroll": false,
-		"all-outputs": true,
-		"active-only": false,
-		"format": "{icon}",
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "active-only": false,
+    "format": "{icon}",
     "format-icons": {
       "default": " ",
-      "active": " ",
+      "active": " "
     },
-		"persistent-workspace": true,
-		"alphabetical_sort": true,
-		"on-scroll-up": "hyprctl dispatch workspace e+1",
-		"on-scroll-down": "hyprctl dispatch workspace e-1",
-	},
-	"hyprland/language": {
-		"format": "{}",
-		"format-en": "en",
-		"format-sk": "sk",
-		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-	},
+    "persistent-workspace": true,
+    "alphabetical_sort": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-sk": "sk",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
   "custom/nowplaying": {
     "exec": "~/.local/bin/now-playing",
     "interval": 1,
-    "max-length": 50,
+    "max-length": 50
   },
   "custom/check_cam": {
     "exec": "~/.local/bin/check_cam",
     "interval": 5,
     "tooltip-format": "Camera ON!"
   },
-	"custom/workspaces": {
-		"tooltip": false,
-		"format": "workspaces"
-	},
+  "custom/workspaces": {
+    "tooltip": false,
+    "format": "workspaces"
+  },
   "custom/wifi": {
-		"tooltip": false,
-		"format": "wifi"
-	},
-	"custom/volume": {
-		"tooltip": false,
-		"format": "volume",
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-	},
-	"custom/mic": {
-		"tooltip": false,
-		"format": "mic",
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "tooltip": false,
+    "format": "wifi"
+  },
+  "custom/volume": {
+    "tooltip": false,
+    "format": "volume",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "custom/mic": {
+    "tooltip": false,
+    "format": "mic",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
-	},
-	"custom/battery": {
-		"tooltip": false,
-		"format": "battery"
-	},
-	"custom/layout": {
-		"tooltip": false,
-		"format": "layout",
-		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-	},
-	"custom/time": {
-		"tooltip": false,
-		"format": "time"
-	},
-	"custom/spacing": {
-		"tooltip": false,
-		"format": " "
-	},
-	"clock": {
-		"format": "{:%I:%M}",
-		"format-alt": "{:%d-%m-%Y - %A}",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+  },
+  "custom/battery": {
+    "tooltip": false,
+    "format": "battery"
+  },
+  "custom/layout": {
+    "tooltip": false,
+    "format": "layout",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "custom/time": {
+    "tooltip": false,
+    "format": "time"
+  },
+  "custom/spacing": {
+    "tooltip": false,
+    "format": " "
+  },
+  "clock": {
+    "format": "{:%I:%M}",
+    "format-alt": "{:%d-%m-%Y - %A}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-	},
-	"backlight": {
-		"format": "{percent}%",
-		"tooltip": false,
-		"scroll-step": 5.0,
-	},
-	"wireplumber": {
-		"format": "{volume}%",
-		"format-muted": "muted",
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"tooltip": false,
-		"scroll-step": 5.0,
-	},
+  },
+  "backlight": {
+    "format": "{percent}%",
+    "tooltip": false,
+    "scroll-step": 5.0
+  },
+  "wireplumber": {
+    "format": "{volume}%",
+    "format-muted": "muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip": false,
+    "scroll-step": 5.0
+  },
   "pulseaudio": {
-		"format": "{format_source}",
+    "format": "{format_source}",
     "format-source": "{volume}%",
     "format-source-muted": "muted",
-		"tooltip": false,
-		"scroll-step": 5.0,
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "tooltip": false,
+    "scroll-step": 5.0,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
-	},
-	"battery": {
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+  },
+  "battery": {
     "interval": 5,
-		"format": "{capacity}%",
+    "format": "{capacity}%",
     "format-discharging": "{capacity}%",
     "format-charging": "{capacity}% [charging]",
     "format-full": "{capacity}% [full]",
-		"tooltip": true,
-	},
+    "tooltip": true
+  },
   "network": {
     "interval": 1,
     "format": "{ifname}",
@@ -139,14 +139,11 @@
     "tooltip-format": "{ifname} via {gwaddr}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "[disconnected]",
+    "tooltip-format-disconnected": "[disconnected]"
   },
   "hyprland/window": {
     "format": "{title}",
     "tooltip": false,
-    "max-length": 50,
-    "rewrite": {
-      "(.*) — Zen Browser": "$1",
-    },
-  },
+    "max-length": 50
+  }
 }
