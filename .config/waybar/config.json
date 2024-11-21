@@ -1,149 +1,108 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "position": "top",
-  "height": 40,
-  "spacing": 0,
-
+  "height": 50,
   "tooltip": false,
-
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-
-  "modules-center": ["custom/nowplaying"],
-
+  "modules-left": ["hyprland/workspaces", "custom/music"],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "custom/check_cam",
-    "custom/wifi",
+    "idle_inhibitor",
     "network",
-    "custom/volume",
+    "cpu",
+    "memory",
     "wireplumber",
-    "custom/mic",
     "pulseaudio",
-    "custom/battery",
     "battery",
-    "custom/time",
-    "clock"
+    "clock",
+    "tray"
   ],
 
   "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "active-only": false,
-    "format": "{icon}",
-    "format-icons": {
-      "default": " ",
-      "active": " "
-    },
-    "persistent-workspace": true,
-    "alphabetical_sort": true,
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    "all-outputs": true
   },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "en",
-    "format-sk": "sk",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-  },
-  "custom/nowplaying": {
-    "exec": "~/.local/bin/now-playing",
-    "interval": 1,
+  "hyprland/window": {
+    "format": "{title}",
+    "tooltip": false,
     "max-length": 50
   },
-  "custom/check_cam": {
-    "exec": "~/.local/bin/check_cam",
-    "interval": 5,
-    "tooltip-format": "Camera ON!"
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
   },
-  "custom/workspaces": {
-    "tooltip": false,
-    "format": "workspaces"
-  },
-  "custom/wifi": {
-    "tooltip": false,
-    "format": "wifi"
-  },
-  "custom/volume": {
-    "tooltip": false,
-    "format": "volume",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-  },
-  "custom/mic": {
-    "tooltip": false,
-    "format": "mic",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
-  },
-  "custom/battery": {
-    "tooltip": false,
-    "format": "battery"
-  },
-  "custom/layout": {
-    "tooltip": false,
-    "format": "layout",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-  },
-  "custom/time": {
-    "tooltip": false,
-    "format": "time"
-  },
-  "custom/spacing": {
-    "tooltip": false,
-    "format": " "
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "  ",
+      "deactivated": "  "
+    }
   },
   "clock": {
-    "format": "{:%I:%M}",
-    "format-alt": "{:%d-%m-%Y - %A}",
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %B %d}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "backlight": {
-    "format": "{percent}%",
-    "tooltip": false,
-    "scroll-step": 5.0
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "alacritty -e htop"
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": " {used}G",
+    "on-click": "alacritty -e htop"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  Ethernet",
+    "format-disconnected": "⚠ Disconnected",
+    "tooltip": true,
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{ipaddr} : {signalStrength}%",
+    "tooltip-format-ethernet": "{ipaddr} : {bandwidthTotalBytes}",
+    "on-click": "alacritty -e nmtui"
   },
   "wireplumber": {
-    "format": "{volume}%",
-    "format-muted": "muted",
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "tooltip": false,
     "scroll-step": 5.0
   },
   "pulseaudio": {
     "format": "{format_source}",
-    "format-source": "{volume}%",
-    "format-source-muted": "muted",
+    "format-source": "󰍬 {volume}%",
+    "format-source-muted": "󰍭",
     "tooltip": false,
     "scroll-step": 5.0,
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
   },
-  "battery": {
-    "interval": 5,
-    "format": "{capacity}%",
-    "format-discharging": "{capacity}%",
-    "format-charging": "{capacity}% [charging]",
-    "format-full": "{capacity}% [full]",
-    "tooltip": true
-  },
-  "network": {
+
+  "custom/music": {
+    "format": "{}",
+    "max-length": 60,
     "interval": 1,
-    "format": "{ifname}",
-    "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet": "[ethernet] ({bandwidthTotalBytes})",
-    "format-disconnected": "[disconnected]",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "{ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "[disconnected]"
-  },
-  "hyprland/window": {
-    "format": "{title}",
+    "exec": "$HOME/.local/bin/now-playing",
     "tooltip": false,
-    "max-length": 50
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/check_cam": {
+    "exec": "~/.local/bin/check_cam",
+    "interval": 5,
+    "tooltip-format": "Camera ON!"
   }
 }

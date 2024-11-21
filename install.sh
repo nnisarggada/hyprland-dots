@@ -26,7 +26,7 @@ else
 fi
 echo ""
 
-required_programs=("adwaita-dark" "alacritty" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "evtest" "librewolf-bin" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look" "pamixer" "gruvbox-dark-icons-gtk" "pavucontrol" "qt5-wayland" "qt5ct" "qt6ct" "qt6gtk2" "qt5-styleplugins" "qt6-wayland" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "zip" "unrar" "cabextract" "udiskie" "udisks2" "waybar" "wireplumber" "pipewire-pulse" "wl-clipboard" "xdg-desktop-portal-hyprland" "xwaylandvideobridge" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting" "github-cli" "chromium" "neofetch" "neovim" "python-pywal" "v4l2loopback-dkms" "onlyoffice-bin" "yt-dlp" "silicon" "dash" "lua" "go" "python-pip" "man" "ripgrep" "linux-headers" "p7zip" "auto-cpufreq" "mpd" "mpv" "rsync" "gvfs" "pass" "gcr" "bemenu-wayland" "gruvbox-dark-gtk" "ttf-courier-prime" "ttf-rasa" "ls-of" "fzf")
+required_programs=("adwaita-dark" "alacritty" "blueman" "bluez" "bluez-libs" "bluez-utils" "brightnessctl" "evtest" "librewolf-bin" "flatpak" "git" "grimblast" "hypridle" "hyprlock" "hyprpaper" "hyprpicker" "jq" "libnotify" "libva" "libva-nvidia-driver-git" "light" "lxsession" "mlocate" "ncdu" "network-manager-applet" "nodejs" "noto-fonts-emoji" "npm" "ntfs-3g" "nwg-look" "pamixer" "gruvbox-dark-icons-gtk" "pavucontrol" "qt5-wayland" "qt5ct" "qt6ct" "qt6gtk2" "qt5-styleplugins" "qt6-wayland" "sxiv" "thunar" "ttf-jetbrains-mono-nerd" "ttf-joypixels" "unzip" "zip" "unrar" "cabextract" "udiskie" "udisks2" "waybar" "wireplumber" "pipewire-pulse" "wl-clipboard" "xdg-desktop-portal-hyprland" "xwaylandvideobridge" "zathura" "zathura-pdf-mupdf" "zsh" "zsh-syntax-highlighting" "github-cli" "chromium" "neofetch" "neovim" "python-pywal" "v4l2loopback-dkms" "onlyoffice-bin" "yt-dlp" "silicon" "dash" "lua" "go" "python-pip" "man" "ripgrep" "linux-headers" "p7zip" "auto-cpufreq" "mpd" "mpv" "rsync" "gvfs" "pass" "gcr" "bemenu-wayland" "gruvbox-dark-gtk" "bibata-cursor-theme-bin" "ttf-courier-prime" "ttf-rasa" "ls-of" "fzf")
 
 echo ""
 echo "Checking and installing required programs..."
@@ -46,8 +46,6 @@ sudo cp -r .local ~/
 sudo cp -r pix ~/
 sudo cp .zshrc ~/
 sudo cp .gtkrc-2.0 ~/
-
-sudo cp -r xorg.conf.d /etc/X11/
 
 mkdir ~/pix/ss
 

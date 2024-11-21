@@ -1,6 +1,4 @@
 #!/bin/sh
 
-. "${HOME}/.cache/wal/colors.sh"
-
 additional_args="$@"
-bemenu-run -H 51 --ch 25 --cw 2 --hp 10 --tb "$color1" --tf "$color5" --hb "$color2" --hf "$color7" --fn 'Courier Prime Bold 14px' --cf "$cursor" --ff "$cursor" -i $additional_args
+bemenu-run -H 50 --ch 25 --cw 2 --hp 10 --tb "#fabd2f" --tf "#1d2021" --hb "#689d6a" --hf "#ebdbb2" --fn 'Courier Prime Bold 14px' --cf "#ebdbb2" --ff "#ebdbb2" --nb "#1d2021" --nf "#ebdbb2" --ab "#1d2021" --af "#ebdbb2" -i $additional_args

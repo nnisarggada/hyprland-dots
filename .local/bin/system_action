@@ -5,10 +5,10 @@ case "$(readlink -f /sbin/init)" in
 	*) ctl='loginctl' ;;
 esac
 
-case "$(printf "lock\nlogout\nsleep\nreboot\nshutdown" | ~/.local/bin/dmen -p "SYS: " --tb '#F75265')" in
-	'lock')  playerctl pause & gtklock;;
+case "$(printf "lock\nlogout\nsleep\nreboot\nshutdown" | ~/.local/bin/dmen -p "SYS: " --tb '#cc241d' --tf '#ebdbb2')" in
+	'lock')  playerctl pause & hyprlock;;
 	'logout') loginctl terminate-session ${XDG_SESSION_ID-} ;;
-	'sleep') playerctl pause & gtklock & $ctl suspend ;;
+	'sleep') playerctl pause & hyprlock & $ctl suspend ;;
 	'reboot') $ctl reboot ;;
 	'shutdown') $ctl poweroff ;;
 	*) exit 1 ;;
