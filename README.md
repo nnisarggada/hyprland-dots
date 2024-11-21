@@ -1,4 +1,4 @@
-# Minimal Black and White [Hyprland](https://hyprland.org) Rice
+# Minimal Gruvbox [Hyprland](https://hyprland.org) Rice
 
 ## Details
 
