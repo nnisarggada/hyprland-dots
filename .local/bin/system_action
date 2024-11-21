@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # A dmenu wrapper script for system functions.
 case "$(readlink -f /sbin/init)" in
 	*systemd*) ctl='systemctl' ;;
@@ -6,8 +7,8 @@ case "$(readlink -f /sbin/init)" in
 esac
 
 case "$(printf "lock\nlogout\nsleep\nreboot\nshutdown" | ~/.local/bin/dmen -p "SYS: " --tb '#cc241d' --tf '#ebdbb2')" in
-	'lock')  playerctl pause & hyprlock;;
-	'logout') loginctl terminate-session ${XDG_SESSION_ID-} ;;
+	'lock')  playerctl pause & hyprlock ;;
+	'logout') wayland-logout ;;
 	'sleep') playerctl pause & hyprlock & $ctl suspend ;;
 	'reboot') $ctl reboot ;;
 	'shutdown') $ctl poweroff ;;
