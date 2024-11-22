@@ -4,7 +4,7 @@
   "height": 50,
   "tooltip": false,
   "modules-left": ["hyprland/workspaces", "custom/music"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [],
   "modules-right": [
     "custom/check_cam",
     "idle_inhibitor",
@@ -88,6 +88,19 @@
     "tooltip": false,
     "scroll-step": 5.0,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+  "battery": {
+    "interval": 1,
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-charging": " {capacity}%",
+    "format-full": " {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "tooltip-format-discharging": "{time}",
+    "tooltip-format-charging": "{timeTo}"
   },
 
   "custom/music": {

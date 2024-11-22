@@ -91,7 +91,16 @@ window#waybar {
   border-bottom: 4px solid #cc241d;
 }
 
+#battery {
+  padding: 0 10px;
+}
+
 #battery.warning {
+  background: #fabd2f;
+  border-bottom: 4px solid #fabd2f;
+}
+
+#battery.critical {
   background: #cc241d;
   border-bottom: 4px solid #cc241d;
 }
