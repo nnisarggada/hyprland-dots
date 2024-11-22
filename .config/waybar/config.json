@@ -45,12 +45,13 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "cpu": {
+    "interval": 1,
     "format": " {usage}%",
     "on-click": "alacritty -e htop"
   },
 
   "memory": {
-    "interval": 30,
+    "interval": 1,
     "format": " {used}G",
     "on-click": "alacritty -e htop"
   },
