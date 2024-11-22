@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Get the process ID of the running wf-recorder
+recording_pid=$(pgrep -xo wf-recorder)
+
+# Check if -a or --audio is passed for audio-only recording
+audio_only=false
+if [[ "$1" == "-a" || "$1" == "--audio" ]]; then
+    audio_only=true
+fi
+
+# Function to handle errors gracefully
+error_exit() {
+    notify-send "Screen Recording" "$1"
+    exit 1
+}
+
+# Handle the --check (-c) flag
+if [[ "$1" == "-c" || "$1" == "--check" ]]; then
+    if [[ -n "$recording_pid" ]]; then
+        echo "  Recording"
+    fi
+    exit 0
+fi
+
+# Stop recording if already running
+if [[ -n "$recording_pid" ]]; then
+    kill "$recording_pid" && notify-send "Screen Recording" "Recording stopped" || error_exit "Failed to stop recording :/"
+    exit 0
+fi
+
+# Get the screen geometry using `slurp`
+geometry="$(slurp -d)" || error_exit "Failed to capture screen geometry :/"
+
+if [[ -n "$geometry" ]]; then
+    # Create the recordings directory if it doesn't exist
+    recordings_dir=~/vids/recordings
+    mkdir -p "$recordings_dir" || error_exit "Failed to create directory: $recordings_dir :/"
+
+    # Start recording using wf-recorder
+    if [[ "$audio_only" == true ]]; then
+    wf-recorder -a -f "$recordings_dir/screen-record-$(date +%Y-%m-%d-%H-%M-%S).mp4" -g "$geometry" || \
+        error_exit "Failed to start screen recording :/"
+    else
+    wf-recorder -f "$recordings_dir/screen-record-$(date +%Y-%m-%d-%H-%M-%S).mp4" -g "$geometry" || \
+        error_exit "Failed to start screen recording :/"
+    fi
+else
+    error_exit "No geometry selected :/"
+fi

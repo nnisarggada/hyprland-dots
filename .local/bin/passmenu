@@ -2,6 +2,8 @@
 
 dir=$HOME/.password-store/
 
-pass=$(find $dir -iname "*.gpg" | awk -F $dir '{print $2}' | cut -d '.' -f 1 | ~/.local/bin/dmen -p "PASS:")
+# Find all .gpg files, strip the directory, and cut based on the last period in the filename
+pass=$(find $dir -iname "*.gpg" | awk -F $dir '{print $2}' | rev | cut -d '.' -f 2- | rev | ~/.local/bin/dmen -p "PASS:")
 
+# Copy the password and show notification
 pass $pass -c && notify-send "Password copied!" "Password for $pass copied to clipboard"
