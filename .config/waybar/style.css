@@ -97,6 +97,7 @@ window#waybar {
 
 #battery.warning {
   background: #fabd2f;
+  color: #1d2021;
   border-bottom: 4px solid #fabd2f;
 }
 
