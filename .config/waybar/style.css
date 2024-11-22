@@ -17,6 +17,7 @@ window#waybar {
 #clock,
 #custom-music,
 #custom-check_cam,
+#custom-check_rec,
 #window {
   font-weight: 800;
 }
@@ -61,11 +62,16 @@ window#waybar {
   padding: 0 10px;
 }
 
-#custom-check_cam {
+#custom-check_cam,
+#custom-check_rec {
   background: #cc241d;
   color: #ebdbb2;
   border-bottom: 4px solid #ebdbb2;
   padding-left: 5px;
+}
+
+#custom-check_rec {
+  padding: 0 10px;
 }
 
 #clock {

@@ -7,6 +7,7 @@
   "modules-left": ["hyprland/workspaces", "custom/music"],
   "modules-center": [],
   "modules-right": [
+    "custom/check_rec",
     "custom/check_cam",
     "idle_inhibitor",
     "network",
@@ -115,9 +116,15 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
   },
+  "custom/check_rec": {
+    "exec": "~/.local/bin/record-screen -c",
+    "interval": 1,
+    "tooltip-format": "Click to stop recording",
+    "on-click": "~/.local/bin/record-screen"
+  },
   "custom/check_cam": {
     "exec": "~/.local/bin/check_cam",
-    "interval": 5,
+    "interval": 1,
     "tooltip-format": "Camera ON!"
   }
 }
